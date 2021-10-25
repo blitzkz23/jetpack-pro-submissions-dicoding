@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 val valueHeight = height.toDouble()
 
                 var hasil = ""
-                    when (v.id) {
+                when (v.id) {
                     R.id.btn_save -> {
                         mainViewModel.save(valueWidth, valueLength, valueHeight)
                         visible()
