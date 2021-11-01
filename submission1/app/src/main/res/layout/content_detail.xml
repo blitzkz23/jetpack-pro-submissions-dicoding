@@ -9,7 +9,7 @@
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/img_poster"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="500dp"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -11,6 +11,7 @@
 
 <!--    My Color Scheme -->
     <color name="primarypurple">#FF373B69</color>
+    <color name="secondarypurple">#FF373B69</color>
     <color name="subsilver">#FF9698A9</color>
     <color name="alterwhite">#FFFAFAFA</color>
 </resources>
