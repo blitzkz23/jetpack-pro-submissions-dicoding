@@ -8,7 +8,7 @@ import com.app.academy.utils.DataDummy
 class DetailCourseViewModel : ViewModel() {
 	private lateinit var courseId: String
 
-	fun selectedCourse(courseId: String) {
+	fun setSelectedCourse(courseId: String) {
 		this.courseId = courseId
 	}
 

@@ -2,7 +2,6 @@ package com.app.academy.ui.detail
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.RoundedCorner
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -11,9 +10,7 @@ import com.app.academy.R
 import com.app.academy.data.CourseEntity
 import com.app.academy.databinding.ActivityDetailCourseBinding
 import com.app.academy.databinding.ContentDetailCourseBinding
-import com.app.academy.ui.detail.DetailCourseActivity.Companion.EXTRA_COURSE
 import com.app.academy.ui.reader.CourseReaderActivity
-import com.app.academy.utils.DataDummy
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
@@ -41,7 +38,7 @@ class DetailCourseActivity : AppCompatActivity() {
 		if (extras != null) {
 			val courseId = extras.getString(EXTRA_COURSE)
 			if (courseId != null) {
-				viewModel.selectedCourse(courseId)
+				viewModel.setSelectedCourse(courseId)
 				val modules = viewModel.getModules()
 				adapter.setModules(modules)
 				populateCourse(viewModel.getCourse() as CourseEntity)
