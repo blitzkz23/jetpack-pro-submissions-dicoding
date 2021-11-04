@@ -6,6 +6,7 @@
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission1/app/src/main/res/drawable/ic_bg_splash.xml" value="0.33645833333333336" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission1/app/src/main/res/drawable/ic_error.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission1/app/src/main/res/drawable/ic_loading.xml" value="0.18229166666666666" />
+        <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission1/app/src/main/res/drawable/ic_refresh_black.xml" value="0.33645833333333336" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission1/app/src/main/res/drawable/splash.xml" value="0.33645833333333336" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission1/app/src/main/res/drawable/splash_image.xml" value="0.33645833333333336" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission1/app/src/main/res/layout/activity_detail.xml" value="0.31614583333333335" />
@@ -14,7 +15,7 @@
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission1/app/src/main/res/layout/content_detail.xml" value="0.33" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission1/app/src/main/res/layout/fragment_movie.xml" value="0.31614583333333335" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission1/app/src/main/res/layout/fragment_tv_show.xml" value="0.31614583333333335" />
-        <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission1/app/src/main/res/layout/items_movie.xml" value="0.33" />
+        <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission1/app/src/main/res/layout/items_movie.xml" value="0.25" />
       </map>
     </option>
   </component>

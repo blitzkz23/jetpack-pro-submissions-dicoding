@@ -53,7 +53,7 @@ class DetailTvShowActivity : AppCompatActivity() {
 		Glide.with(this)
 			.load(tvShowEntity.imagePath)
 			.apply(RequestOptions.placeholderOf(R.drawable.ic_loading).error(R.drawable.ic_loading))
-			.into(detailContentBinding.imgPoster)
+			.into(activityDetailBinding.imgPoster)
 	}
 
 	companion object {

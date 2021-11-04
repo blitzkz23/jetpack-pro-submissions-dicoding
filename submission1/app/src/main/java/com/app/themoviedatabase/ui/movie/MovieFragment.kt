@@ -1,14 +1,12 @@
 package com.app.themoviedatabase.ui.movie
 
-import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.app.themoviedatabase.R
 import com.app.themoviedatabase.databinding.FragmentMovieBinding
 
 class MovieFragment : Fragment() {
@@ -18,7 +16,7 @@ class MovieFragment : Fragment() {
 	override fun onCreateView(
 		inflater: LayoutInflater, container: ViewGroup?,
 		savedInstanceState: Bundle?
-	): View? {
+	): View {
 		// Inflate the layout for this fragment
 		fragmentMovieBinding = FragmentMovieBinding.inflate(layoutInflater, container, false)
 		return fragmentMovieBinding.root

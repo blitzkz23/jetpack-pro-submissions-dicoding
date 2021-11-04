@@ -13,4 +13,5 @@
     <string name="description_placeholder">Description</string>
     <string name="duration">Duration</string>
     <string name="overview">Overview</string>
+    <string name="moviedb_logo">MovieDb Logo</string>
 </resources>

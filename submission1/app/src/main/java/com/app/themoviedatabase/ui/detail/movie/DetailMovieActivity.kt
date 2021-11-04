@@ -3,7 +3,6 @@ package com.app.themoviedatabase.ui.detail.movie
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.ui.AppBarConfiguration
 import com.app.themoviedatabase.R
 import com.app.themoviedatabase.data.MovieEntity
 import com.app.themoviedatabase.databinding.ActivityDetailBinding
@@ -13,7 +12,6 @@ import com.bumptech.glide.request.RequestOptions
 
 class DetailMovieActivity : AppCompatActivity() {
 
-	private lateinit var appBarConfiguration: AppBarConfiguration
 	private lateinit var activityDetailBinding: ActivityDetailBinding
 	private lateinit var detailContentBinding: ContentDetailBinding
 
@@ -39,7 +37,7 @@ class DetailMovieActivity : AppCompatActivity() {
 			if (movieId != null) {
 				viewModel.setSelectedMovie(movieId)
 				val movies = viewModel.getMovie()
-				populateMovies(movies as MovieEntity)
+				populateMovies(movies)
 			}
 		}
 
@@ -58,7 +56,7 @@ class DetailMovieActivity : AppCompatActivity() {
 		Glide.with(this)
 			.load(movieEntity.imagePath)
 			.apply(RequestOptions.placeholderOf(R.drawable.ic_loading).error(R.drawable.ic_loading))
-			.into(detailContentBinding.imgPoster)
+			.into(activityDetailBinding.imgPoster)
 	}
 
 	companion object {

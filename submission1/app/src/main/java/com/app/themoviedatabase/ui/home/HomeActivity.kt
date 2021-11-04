@@ -18,5 +18,8 @@ class HomeActivity : AppCompatActivity() {
 		activityHomeBinding.tabs.setupWithViewPager(activityHomeBinding.viewPager)
 
 		supportActionBar?.elevation = 0f
+
+		supportActionBar?.setDisplayUseLogoEnabled(true)
+		supportActionBar?.setLogo(R.drawable.splash)
 	}
 }
