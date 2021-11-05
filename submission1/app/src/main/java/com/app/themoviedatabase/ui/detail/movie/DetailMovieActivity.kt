@@ -1,6 +1,7 @@
 package com.app.themoviedatabase.ui.detail.movie
 
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.app.themoviedatabase.R
@@ -12,18 +13,18 @@ import com.bumptech.glide.request.RequestOptions
 
 class DetailMovieActivity : AppCompatActivity() {
 
-	private lateinit var activityDetailBinding: ActivityDetailBinding
-	private lateinit var detailContentBinding: ContentDetailBinding
+	private var activityDetailBinding: ActivityDetailBinding? = null
+	private var detailContentBinding: ContentDetailBinding? = null
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 
 		activityDetailBinding = ActivityDetailBinding.inflate(layoutInflater)
-		detailContentBinding = activityDetailBinding.detailContent
+		detailContentBinding = activityDetailBinding?.detailContent
 
-		setContentView(activityDetailBinding.root)
+		setContentView(activityDetailBinding?.root)
 
-		setSupportActionBar(activityDetailBinding.toolbar)
+		setSupportActionBar(activityDetailBinding?.toolbar)
 		supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
 		val viewModel = ViewModelProvider(
@@ -44,7 +45,7 @@ class DetailMovieActivity : AppCompatActivity() {
 	}
 
 	private fun populateMovies(movieEntity: MovieEntity) {
-		with(detailContentBinding) {
+		detailContentBinding?.apply {
 			supportActionBar?.title = movieEntity.title
 			tvDetailTitle.text = movieEntity.title
 			tvDetailDate.text = movieEntity.releaseDate
@@ -53,10 +54,15 @@ class DetailMovieActivity : AppCompatActivity() {
 			tvDetailRate.text = resources.getString(R.string.rating_placeholder, movieEntity.score)
 			tvDetailDescription.text = movieEntity.overview
 		}
-		Glide.with(this)
-			.load(movieEntity.imagePath)
+		activityDetailBinding?.imgPoster?.loadImage(movieEntity.imagePath)
+	}
+
+	private fun ImageView.loadImage(url: Int) {
+		Glide.with(this.context)
+			.load(url)
 			.apply(RequestOptions.placeholderOf(R.drawable.ic_loading).error(R.drawable.ic_loading))
-			.into(activityDetailBinding.imgPoster)
+			.centerCrop()
+			.into(this)
 	}
 
 	companion object {

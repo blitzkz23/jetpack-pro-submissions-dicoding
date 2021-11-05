@@ -2,29 +2,29 @@ package com.app.themoviedatabase.ui.detail.tvshow
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.lifecycle.ViewModelProvider
 import com.app.themoviedatabase.R
 import com.app.themoviedatabase.data.TvShowEntity
 import com.app.themoviedatabase.databinding.ActivityDetailBinding
 import com.app.themoviedatabase.databinding.ContentDetailBinding
-import com.app.themoviedatabase.ui.detail.movie.DetailMovieViewModel
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
 class DetailTvShowActivity : AppCompatActivity() {
 
-	private lateinit var activityDetailBinding: ActivityDetailBinding
-	private lateinit var detailContentBinding: ContentDetailBinding
+	private var activityDetailBinding: ActivityDetailBinding? = null
+	private var detailContentBinding: ContentDetailBinding? = null
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 
 		activityDetailBinding = ActivityDetailBinding.inflate(layoutInflater)
-		detailContentBinding = activityDetailBinding.detailContent
+		detailContentBinding = activityDetailBinding?.detailContent
 
-		setContentView(activityDetailBinding.root)
+		setContentView(activityDetailBinding?.root)
 
-		setSupportActionBar(activityDetailBinding.toolbar)
+		setSupportActionBar(activityDetailBinding?.toolbar)
 		supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
 		val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[DetailTvShowViewModel::class.java]
@@ -41,7 +41,7 @@ class DetailTvShowActivity : AppCompatActivity() {
 	}
 
 	private fun populateTvShow(tvShowEntity: TvShowEntity) {
-		with(detailContentBinding) {
+		detailContentBinding?.apply {
 			supportActionBar?.title = tvShowEntity.title
 			tvDetailTitle.text = tvShowEntity.title
 			tvDetailDate.text = tvShowEntity.releaseDate
@@ -50,10 +50,15 @@ class DetailTvShowActivity : AppCompatActivity() {
 			tvDetailRate.text = resources.getString(R.string.rating_placeholder, tvShowEntity.score)
 			tvDetailDescription.text = tvShowEntity.overview
 		}
-		Glide.with(this)
-			.load(tvShowEntity.imagePath)
+		activityDetailBinding?.imgPoster?.loadImage(tvShowEntity.imagePath)
+	}
+
+	private fun ImageView.loadImage(url: Int) {
+		Glide.with(this.context)
+			.load(url)
 			.apply(RequestOptions.placeholderOf(R.drawable.ic_loading).error(R.drawable.ic_loading))
-			.into(activityDetailBinding.imgPoster)
+			.centerCrop()
+			.into(this)
 	}
 
 	companion object {

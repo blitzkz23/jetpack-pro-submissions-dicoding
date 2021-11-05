@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.themoviedatabase.R
 import com.app.themoviedatabase.data.TvShowEntity
 import com.app.themoviedatabase.databinding.ItemsMovieBinding
-import com.app.themoviedatabase.ui.detail.movie.DetailMovieActivity
 import com.app.themoviedatabase.ui.detail.tvshow.DetailTvShowActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions

@@ -17,6 +17,7 @@ class DetailMovieViewModel : ViewModel() {
 		for (movieEntity in movieEntities) {
 			if (movieEntity.movieId == movieId) {
 				movie = movieEntity
+				break
 			}
 		}
 		return movie

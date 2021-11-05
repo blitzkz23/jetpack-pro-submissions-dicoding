@@ -11,15 +11,15 @@ import com.app.themoviedatabase.databinding.FragmentMovieBinding
 
 class MovieFragment : Fragment() {
 
-	private lateinit var fragmentMovieBinding: FragmentMovieBinding
+	private var fragmentMovieBinding: FragmentMovieBinding? = null
 
 	override fun onCreateView(
 		inflater: LayoutInflater, container: ViewGroup?,
 		savedInstanceState: Bundle?
-	): View {
+	): View? {
 		// Inflate the layout for this fragment
 		fragmentMovieBinding = FragmentMovieBinding.inflate(layoutInflater, container, false)
-		return fragmentMovieBinding.root
+		return fragmentMovieBinding?.root
 	}
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -30,7 +30,7 @@ class MovieFragment : Fragment() {
 		val movieAdapter = MovieAdapter()
 		movieAdapter.setMovies(movies)
 
-		with(fragmentMovieBinding.rvMovie) {
+		with(fragmentMovieBinding!!.rvMovie) {
 			layoutManager = LinearLayoutManager(context)
 			setHasFixedSize(true)
 			adapter = movieAdapter

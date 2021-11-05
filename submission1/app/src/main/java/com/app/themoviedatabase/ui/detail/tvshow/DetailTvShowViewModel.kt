@@ -17,6 +17,7 @@ class DetailTvShowViewModel : ViewModel() {
 		for (tvShowEntity in tvShowEntities) {
 			if (tvShowEntity.tvShowId == tvShowId) {
 				tvShow = tvShowEntity
+				break
 			}
 		}
 		return tvShow

@@ -1,13 +1,13 @@
 package com.app.themoviedatabase.data
 
 data class TvShowEntity(
-	var tvShowId: String,
-	var title: String,
-	var releaseDate: String,
-	var overview: String,
-	var genre: String,
-	var score: Int,
-	var duration: String,
-	var imagePath: Int,
+	val tvShowId: String,
+	val title: String,
+	val releaseDate: String,
+	val overview: String,
+	val genre: String,
+	val score: Int,
+	val duration: String,
+	val imagePath: Int,
 	var favorited: Boolean = false,
 )
