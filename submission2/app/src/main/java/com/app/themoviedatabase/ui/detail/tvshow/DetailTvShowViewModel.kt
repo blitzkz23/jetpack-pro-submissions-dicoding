@@ -1,10 +1,11 @@
 package com.app.themoviedatabase.ui.detail.tvshow
 
 import androidx.lifecycle.ViewModel
+import com.app.themoviedatabase.data.MovieDbRepository
 import com.app.themoviedatabase.data.source.local.entity.TvShowEntity
 import com.app.themoviedatabase.utils.DataDummy
 
-class DetailTvShowViewModel : ViewModel() {
+class DetailTvShowViewModel(private val movieDbRepository: MovieDbRepository) : ViewModel() {
 	private lateinit var tvShowId: String
 
 	fun setSelectedTvShow(tvShowId: String) {

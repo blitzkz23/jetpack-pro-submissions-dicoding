@@ -1,10 +1,11 @@
 package com.app.themoviedatabase.ui.detail.movie
 
 import androidx.lifecycle.ViewModel
+import com.app.themoviedatabase.data.MovieDbRepository
 import com.app.themoviedatabase.data.source.local.entity.MovieEntity
 import com.app.themoviedatabase.utils.DataDummy
 
-class DetailMovieViewModel : ViewModel() {
+class DetailMovieViewModel(private val movieDbRepository: MovieDbRepository) : ViewModel() {
 	private lateinit var movieId: String
 
 	fun setSelectedMovie(movieId: String) {

@@ -7,8 +7,8 @@ import com.app.themoviedatabase.data.source.local.entity.MovieEntity
 import com.app.themoviedatabase.data.source.remote.RemoteDataSource
 import com.app.themoviedatabase.data.source.remote.response.ResultsItem
 
-class MoviedbRepository private constructor(private val remoteDataSource: RemoteDataSource) :
-	MoviedbDataSource {
+class MovieDbRepository private constructor(private val remoteDataSource: RemoteDataSource) :
+	MovieDbDataSource {
 
 	override fun getAllPopularMovies(): LiveData<List<MovieEntity>> {
 		val popularMovieResults = MutableLiveData<List<MovieEntity>>()
@@ -38,12 +38,12 @@ class MoviedbRepository private constructor(private val remoteDataSource: Remote
 
 	companion object {
 		@Volatile
-		private var instance: MoviedbRepository? = null
+		private var instance: MovieDbRepository? = null
 		private const val TAG = "MovieDbRepository"
 
-		fun getInstance(remoteData: RemoteDataSource): MoviedbRepository =
+		fun getInstance(remoteData: RemoteDataSource): MovieDbRepository =
 			instance ?: synchronized(this) {
-				MoviedbRepository(remoteData).apply { instance = this }
+				MovieDbRepository(remoteData).apply { instance = this }
 			}
 	}
 

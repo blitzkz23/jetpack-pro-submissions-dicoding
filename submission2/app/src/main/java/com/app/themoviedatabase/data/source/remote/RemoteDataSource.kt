@@ -2,6 +2,7 @@ package com.app.themoviedatabase.data.source.remote
 
 import android.content.ContentValues.TAG
 import android.util.Log
+import com.app.themoviedatabase.BuildConfig
 import com.app.themoviedatabase.api.ApiConfig
 import com.app.themoviedatabase.data.source.remote.response.ResultsItem
 import kotlinx.coroutines.CoroutineScope
@@ -13,7 +14,7 @@ class RemoteDataSource {
 
 	fun getPopularMovie(callback: PopularMovieCallback) {
 		CoroutineScope(Dispatchers.IO).launch {
-			val client = ApiConfig.getApiService().getPopularMovie(1)
+			val client = ApiConfig.getApiService().getPopularMovie(BuildConfig.MOVIEDB_TOKEN, 1)
 			try {
 				val response = client.awaitResponse()
 				if (response.isSuccessful) {
