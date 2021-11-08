@@ -41,7 +41,7 @@ data class ResultsItem(
 	val genreIds: List<Int>,
 
 	@field:SerializedName("poster_path")
-	val posterPath: String?,
+	val posterPath: String? = null,
 
 	@field:SerializedName("backdrop_path")
 	val backdropPath: String?,

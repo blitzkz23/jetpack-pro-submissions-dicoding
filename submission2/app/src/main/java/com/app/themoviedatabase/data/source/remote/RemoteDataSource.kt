@@ -3,7 +3,6 @@ package com.app.themoviedatabase.data.source.remote
 import android.content.ContentValues.TAG
 import android.util.Log
 import com.app.themoviedatabase.api.ApiConfig
-import com.app.themoviedatabase.data.source.remote.response.PopularMovieResponse
 import com.app.themoviedatabase.data.source.remote.response.ResultsItem
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -33,6 +32,16 @@ class RemoteDataSource {
 	interface PopularMovieCallback {
 		fun onPopularMoviesReceived(popularMovieResponses: List<ResultsItem>)
 		fun onDataNotAvailable()
+	}
+
+	companion object {
+		@Volatile
+		private var instance: RemoteDataSource ?= null
+
+		fun getInstance(): RemoteDataSource =
+			instance ?: synchronized(this) {
+				RemoteDataSource().apply { instance = this }
+			}
 	}
 
 }
