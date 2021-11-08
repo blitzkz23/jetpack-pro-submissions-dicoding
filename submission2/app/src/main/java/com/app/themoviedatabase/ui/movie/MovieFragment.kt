@@ -12,6 +12,7 @@ import com.app.themoviedatabase.databinding.FragmentMovieBinding
 class MovieFragment : Fragment() {
 
 	private var fragmentMovieBinding: FragmentMovieBinding? = null
+	private lateinit var viewModel: MovieViewModel
 
 	override fun onCreateView(
 		inflater: LayoutInflater, container: ViewGroup?,
@@ -24,17 +25,19 @@ class MovieFragment : Fragment() {
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
-		val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[MovieViewModel::class.java]
+		viewModel = obtainViewModel()
 		val movies = viewModel.getMovies()
 
 		val movieAdapter = MovieAdapter()
 		movieAdapter.setMovies(movies)
+
 
 		with(fragmentMovieBinding!!.rvMovie) {
 			layoutManager = LinearLayoutManager(context)
 			setHasFixedSize(true)
 			adapter = movieAdapter
 		}
-
 	}
+
+	private fun obtainViewModel() = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[MovieViewModel::class.java]
 }

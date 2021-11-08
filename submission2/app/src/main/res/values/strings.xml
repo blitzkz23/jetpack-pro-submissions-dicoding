@@ -14,4 +14,7 @@
     <string name="duration">Duration</string>
     <string name="overview">Overview</string>
     <string name="moviedb_logo">MovieDb Logo</string>
+    <string name="tmdb_logo">tmdb_logo</string>
+    <string name="poster_image">poster image</string>
+    <string name="popular">Popular</string>
 </resources>
