@@ -5,7 +5,7 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.app.themoviedatabase.R
-import com.app.themoviedatabase.data.local.entity.MovieEntity
+import com.app.themoviedatabase.data.source.local.entity.MovieEntity
 import com.app.themoviedatabase.databinding.ActivityDetailBinding
 import com.app.themoviedatabase.databinding.ContentDetailBinding
 import com.bumptech.glide.Glide

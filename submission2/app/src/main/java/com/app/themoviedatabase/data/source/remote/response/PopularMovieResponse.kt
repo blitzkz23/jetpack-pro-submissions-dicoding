@@ -1,4 +1,4 @@
-package com.app.themoviedatabase.data.remote.response
+package com.app.themoviedatabase.data.source.remote.response
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

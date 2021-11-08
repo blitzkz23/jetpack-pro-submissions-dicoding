@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.app.themoviedatabase.R
-import com.app.themoviedatabase.data.local.entity.TvShowEntity
+import com.app.themoviedatabase.data.source.local.entity.TvShowEntity
 import com.app.themoviedatabase.databinding.ItemsMovieBinding
 import com.app.themoviedatabase.ui.detail.tvshow.DetailTvShowActivity
 import com.bumptech.glide.Glide

@@ -12,6 +12,7 @@ import com.app.themoviedatabase.databinding.FragmentTvShowBinding
 class TvShowFragment : Fragment() {
 
 	private var fragmentTvShowBinding: FragmentTvShowBinding? = null
+	private lateinit var viewModel: TvShowViewModel
 
 	override fun onCreateView(
 		inflater: LayoutInflater, container: ViewGroup?,
@@ -24,17 +25,19 @@ class TvShowFragment : Fragment() {
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
-		val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[TvShowViewModel::class.java]
+		viewModel = obtainViewModel()
 		val tvShows = viewModel.getTvShows()
 
 		val tvShowAdapter = TvShowAdapter()
 		tvShowAdapter.setTvShows(tvShows)
 
-		with(fragmentTvShowBinding!!.rvTvShow) {
+		fragmentTvShowBinding?.rvTvShow?.apply{
 			layoutManager = LinearLayoutManager(context)
 			setHasFixedSize(true)
 			adapter = tvShowAdapter
 		}
 	}
+
+	private fun obtainViewModel() = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[TvShowViewModel::class.java]
 
 }

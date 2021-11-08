@@ -1,7 +1,7 @@
 package com.app.themoviedatabase.api
 
 import com.app.themoviedatabase.BuildConfig
-import com.app.themoviedatabase.data.remote.response.PopularMovieResponse
+import com.app.themoviedatabase.data.source.remote.response.PopularMovieResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers

@@ -1,4 +1,4 @@
-package com.app.themoviedatabase.data.local.entity
+package com.app.themoviedatabase.data.source.local.entity
 
 data class TvShowEntity(
 	val tvShowId: String,

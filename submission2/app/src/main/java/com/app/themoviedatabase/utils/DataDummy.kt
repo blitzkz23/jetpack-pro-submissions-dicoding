@@ -1,8 +1,8 @@
 package com.app.themoviedatabase.utils
 
 import com.app.themoviedatabase.R
-import com.app.themoviedatabase.data.local.entity.MovieEntity
-import com.app.themoviedatabase.data.local.entity.TvShowEntity
+import com.app.themoviedatabase.data.source.local.entity.MovieEntity
+import com.app.themoviedatabase.data.source.local.entity.TvShowEntity
 
 object DataDummy {
 

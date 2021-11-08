@@ -1,7 +1,7 @@
-package com.app.themoviedatabase.data.local.entity
+package com.app.themoviedatabase.data.source.local.entity
 
 data class MovieEntity(
-	val movieId: String,
+	val movieId: Int,
 	val title: String,
 	val releaseDate: String,
 	val overview: String,
