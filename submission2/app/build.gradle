@@ -73,6 +73,9 @@ dependencies {
     androidTestImplementation "androidx.test:rules:$androidTestVersion"
     androidTestImplementation "androidx.test.ext:junit:$junitExtversion"
     implementation "androidx.test.espresso:espresso-idling-resource:$idleResourceVersion"
+    testImplementation "androidx.arch.core:core-testing:$androidCoreTestVersion"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion"
+    testImplementation 'org.mockito:mockito-inline:2.13.0'
 
     // animation
     implementation "com.airbnb.android:lottie:$lottieVersion"

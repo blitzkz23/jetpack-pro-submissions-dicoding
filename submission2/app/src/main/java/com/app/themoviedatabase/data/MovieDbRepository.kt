@@ -22,7 +22,9 @@ class MovieDbRepository private constructor(private val remoteDataSource: Remote
 						response.title,
 						response.releaseDate,
 						response.overview,
+						response.originalLanguage,
 						response.voteAverage,
+						response.popularity,
 						response.posterPath,
 						response.backdropPath,
 					)
@@ -31,9 +33,9 @@ class MovieDbRepository private constructor(private val remoteDataSource: Remote
 				popularMovieResults.postValue(popularMovieList)
 			}
 
-//			override fun onDataNotAvailable() {
-//				Log.e(TAG, "onFailure: Movie failed to load.")
-//			}
+			override fun onDataNotAvailable() {
+				Log.e(TAG, "onFailure: Movie failed to load.")
+			}
 		})
 		return popularMovieResults
 	}
@@ -50,7 +52,9 @@ class MovieDbRepository private constructor(private val remoteDataSource: Remote
 							response.title,
 							response.releaseDate,
 							response.overview,
+							response.originalLanguage,
 							response.voteAverage,
+							response.popularity,
 							response.posterPath,
 							response.backdropPath,
 						)
@@ -59,9 +63,9 @@ class MovieDbRepository private constructor(private val remoteDataSource: Remote
 				popularMovieResults.postValue(movie)
 			}
 
-//			override fun onDataNotAvailable() {
-//				Log.e(TAG, "onFailure: Movie failed to load.")
-//			}
+			override fun onDataNotAvailable() {
+				Log.e(TAG, "onFailure: Movie failed to load.")
+			}
 		})
 		return popularMovieResults
 	}
@@ -77,7 +81,9 @@ class MovieDbRepository private constructor(private val remoteDataSource: Remote
 						response.title,
 						response.releaseDate,
 						response.overview,
+						response.originalLanguage,
 						response.voteAverage,
+						response.popularity,
 						response.posterPath,
 						response.backdropPath,
 					)
@@ -86,9 +92,9 @@ class MovieDbRepository private constructor(private val remoteDataSource: Remote
 				popularTvShowResults.postValue(popularTvShowList)
 			}
 
-//			override fun onDataNotAvailable() {
-//				Log.e(TAG, "onFailure: TvShow failed to load.")
-//			}
+			override fun onDataNotAvailable() {
+				Log.e(TAG, "onFailure: TvShow failed to load.")
+			}
 		})
 		return popularTvShowResults
 	}
@@ -105,7 +111,9 @@ class MovieDbRepository private constructor(private val remoteDataSource: Remote
 							response.title,
 							response.releaseDate,
 							response.overview,
+							response.originalLanguage,
 							response.voteAverage,
+							response.popularity,
 							response.posterPath,
 							response.backdropPath,
 						)
@@ -114,9 +122,9 @@ class MovieDbRepository private constructor(private val remoteDataSource: Remote
 				popularTvShowResult.postValue(tvShow)
 			}
 
-//			override fun onDataNotAvailable() {
-//				Log.e(TAG, "onFailure: TvShow failed to load.")
-//			}
+			override fun onDataNotAvailable() {
+				Log.e(TAG, "onFailure: TvShow failed to load.")
+			}
 		})
 		return popularTvShowResult
 	}

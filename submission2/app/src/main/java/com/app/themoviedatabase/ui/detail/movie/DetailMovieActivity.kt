@@ -56,8 +56,8 @@ class DetailMovieActivity : AppCompatActivity() {
 			supportActionBar?.title = movieEntity.title
 			tvDetailTitle.text = movieEntity.title
 			tvDetailDate.text = movieEntity.releaseDate
-//			tvDetailDuration.text = movieEntity.duration
-//			tvDetailGenre.text = movieEntity.genre
+			tvDetailLanguage.text = movieEntity.language
+			tvDetailPopularity.text = movieEntity.popularity.toString()
 			tvDetailRate.text = resources.getString(R.string.rating_placeholder, movieEntity.score)
 			tvDetailDescription.text = movieEntity.overview
 		}

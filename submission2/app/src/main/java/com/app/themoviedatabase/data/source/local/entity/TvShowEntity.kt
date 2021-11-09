@@ -5,10 +5,9 @@ data class TvShowEntity(
 	val title: String?,
 	val releaseDate: String,
 	val overview: String,
-//	val genre: String,
+	val language: String,
 	val score: Double,
-//	val duration: String,
+	val popularity: Double,
 	val imagePath: String?,
 	val backdropPath:String?
-//	var favorited: Boolean = false,
 )

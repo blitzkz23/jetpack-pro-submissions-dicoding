@@ -57,7 +57,8 @@ class DetailTvShowActivity : AppCompatActivity() {
 			supportActionBar?.title = tvShowEntity.title
 			tvDetailTitle.text = tvShowEntity.title
 			tvDetailDate.text = tvShowEntity.releaseDate
-//			tvDetailDuration.text = tvShowEntity.duration
+			tvDetailLanguage.text = tvShowEntity.language
+			tvDetailPopularity.text = tvShowEntity.popularity.toString()
 			tvDetailRate.text = resources.getString(R.string.rating_placeholder, tvShowEntity.score)
 			tvDetailDescription.text = tvShowEntity.overview
 		}
