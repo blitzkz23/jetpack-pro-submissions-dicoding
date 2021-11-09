@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.app.themoviedatabase.data.MovieDbRepository
 import com.app.themoviedatabase.data.source.local.entity.TvShowEntity
-import com.app.themoviedatabase.utils.DataDummy
 
 class DetailTvShowViewModel(private val movieDbRepository: MovieDbRepository) : ViewModel() {
 	private var tvShowId: Int = 0

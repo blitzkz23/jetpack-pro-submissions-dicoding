@@ -11,7 +11,6 @@ import com.app.themoviedatabase.data.ViewModelFactory
 import com.app.themoviedatabase.data.source.local.entity.MovieEntity
 import com.app.themoviedatabase.databinding.ActivityDetailBinding
 import com.app.themoviedatabase.databinding.ContentDetailBinding
-import com.app.themoviedatabase.ui.movie.MovieViewModel
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 

@@ -17,4 +17,9 @@
     <string name="tmdb_logo">tmdb_logo</string>
     <string name="poster_image">poster image</string>
     <string name="popular">Popular</string>
+
+    <string-array name="tab_title">
+        <item>@string/movie</item>
+        <item>@string/tv_show</item>
+    </string-array>
 </resources>
