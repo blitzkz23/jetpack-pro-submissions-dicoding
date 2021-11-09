@@ -1,26 +1,17 @@
 package com.app.themoviedatabase.ui.detail.tvshow
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.app.themoviedatabase.data.MovieDbRepository
 import com.app.themoviedatabase.data.source.local.entity.TvShowEntity
 import com.app.themoviedatabase.utils.DataDummy
 
 class DetailTvShowViewModel(private val movieDbRepository: MovieDbRepository) : ViewModel() {
-	private lateinit var tvShowId: String
+	private var tvShowId: Int = 0
 
-	fun setSelectedTvShow(tvShowId: String) {
+	fun setSelectedTvShow(tvShowId: Int) {
 		this.tvShowId = tvShowId
 	}
 
-	fun getTvShow(): TvShowEntity {
-		lateinit var tvShow: TvShowEntity
-		val tvShowEntities = DataDummy.generateDummyTvShows()
-		for (tvShowEntity in tvShowEntities) {
-			if (tvShowEntity.tvShowId == tvShowId) {
-				tvShow = tvShowEntity
-				break
-			}
-		}
-		return tvShow
-	}
+	fun getTvShow(): LiveData<TvShowEntity> = movieDbRepository.getPopularTvShowById(tvShowId)
 }

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.app.themoviedatabase.data.ViewModelFactory
 import com.app.themoviedatabase.databinding.FragmentTvShowBinding
 
 class TvShowFragment : Fragment() {
@@ -25,11 +26,17 @@ class TvShowFragment : Fragment() {
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
-		viewModel = obtainViewModel()
-		val tvShows = viewModel.getTvShows()
+
+		val factory = ViewModelFactory.getInstance(requireActivity())
+		viewModel = ViewModelProvider(this, factory)[TvShowViewModel::class.java]
 
 		val tvShowAdapter = TvShowAdapter()
-		tvShowAdapter.setTvShows(tvShows)
+		fragmentTvShowBinding?.progressBar?.visibility = View.VISIBLE
+		viewModel.getTvShows().observe(viewLifecycleOwner, { tvShows ->
+			fragmentTvShowBinding?.progressBar?.visibility = View.GONE
+			tvShowAdapter.setTvShows(tvShows)
+			tvShowAdapter.notifyDataSetChanged()
+		})
 
 		fragmentTvShowBinding?.rvTvShow?.apply{
 			layoutManager = LinearLayoutManager(context)
@@ -38,6 +45,5 @@ class TvShowFragment : Fragment() {
 		}
 	}
 
-	private fun obtainViewModel() = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[TvShowViewModel::class.java]
 
 }

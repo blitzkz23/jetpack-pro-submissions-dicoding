@@ -1,26 +1,17 @@
 package com.app.themoviedatabase.ui.detail.movie
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.app.themoviedatabase.data.MovieDbRepository
 import com.app.themoviedatabase.data.source.local.entity.MovieEntity
-import com.app.themoviedatabase.utils.DataDummy
 
 class DetailMovieViewModel(private val movieDbRepository: MovieDbRepository) : ViewModel() {
-	private lateinit var movieId: String
+	private var movieId: Int = 0
 
-	fun setSelectedMovie(movieId: String) {
+	fun setSelectedMovie(movieId: Int) {
 		this.movieId = movieId
 	}
 
-	fun getMovie(): MovieEntity {
-		lateinit var movie: MovieEntity
-		val movieEntities = DataDummy.generateDummyMovies()
-		for (movieEntity in movieEntities) {
-			if (movieEntity.movieId == movieId) {
-				movie = movieEntity
-				break
-			}
-		}
-		return movie
-	}
+	fun getMovie(): LiveData<MovieEntity> = movieDbRepository.getPopularMovieById(movieId)
+
 }

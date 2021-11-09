@@ -2,9 +2,12 @@ package com.app.themoviedatabase.ui.detail.tvshow
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import androidx.lifecycle.ViewModelProvider
+import com.app.themoviedatabase.BuildConfig
 import com.app.themoviedatabase.R
+import com.app.themoviedatabase.data.ViewModelFactory
 import com.app.themoviedatabase.data.source.local.entity.TvShowEntity
 import com.app.themoviedatabase.databinding.ActivityDetailBinding
 import com.app.themoviedatabase.databinding.ContentDetailBinding
@@ -27,16 +30,25 @@ class DetailTvShowActivity : AppCompatActivity() {
 		setSupportActionBar(activityDetailBinding?.toolbar)
 		supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-		val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[DetailTvShowViewModel::class.java]
+		val factory = ViewModelFactory.getInstance(this)
+		val viewModel = ViewModelProvider(this, factory)[DetailTvShowViewModel::class.java]
 
 		val extras = intent.extras
 		if (extras != null) {
-			val tvShowId = extras.getString(EXTRA_TVSHOW)
-			if (tvShowId != null) {
-				viewModel.setSelectedTvShow(tvShowId)
-				val tvShows = viewModel.getTvShow()
-				populateTvShow(tvShows as TvShowEntity)
-			}
+			val tvShowId = extras.getInt(EXTRA_TVSHOW)
+
+			activityDetailBinding?.progressBar?.visibility = View.VISIBLE
+			activityDetailBinding?.content?.visibility = View.INVISIBLE
+
+			viewModel.setSelectedTvShow(tvShowId)
+			viewModel.getTvShow().observe(this, { tvShows ->
+				activityDetailBinding?.progressBar?.visibility = View.GONE
+				activityDetailBinding?.content?.visibility = View.VISIBLE
+
+				populateTvShow(tvShows)
+			})
+
+
 		}
 	}
 
@@ -45,15 +57,14 @@ class DetailTvShowActivity : AppCompatActivity() {
 			supportActionBar?.title = tvShowEntity.title
 			tvDetailTitle.text = tvShowEntity.title
 			tvDetailDate.text = tvShowEntity.releaseDate
-			tvDetailDuration.text = tvShowEntity.duration
-			tvDetailGenre.text = tvShowEntity.genre
+//			tvDetailDuration.text = tvShowEntity.duration
 			tvDetailRate.text = resources.getString(R.string.rating_placeholder, tvShowEntity.score)
 			tvDetailDescription.text = tvShowEntity.overview
 		}
-		activityDetailBinding?.imgPoster?.loadImage(tvShowEntity.imagePath)
+		activityDetailBinding?.imgPoster?.loadImage("${BuildConfig.BASE_IMAGE_URL}${tvShowEntity.backdropPath}")
 	}
 
-	private fun ImageView.loadImage(url: Int) {
+	private fun ImageView.loadImage(url: String) {
 		Glide.with(this.context)
 			.load(url)
 			.apply(RequestOptions.placeholderOf(R.drawable.ic_loading).error(R.drawable.ic_loading))

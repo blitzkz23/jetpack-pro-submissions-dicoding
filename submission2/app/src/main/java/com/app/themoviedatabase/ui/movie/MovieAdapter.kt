@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.app.themoviedatabase.BuildConfig
 import com.app.themoviedatabase.R
 import com.app.themoviedatabase.data.source.local.entity.MovieEntity
 import com.app.themoviedatabase.databinding.ItemsMovieBinding
@@ -28,14 +29,13 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 				tvMovieDate.text = movie.releaseDate
 				tvMovieRate.text =
 					itemView.context.getString(R.string.rating_placeholder, movie.score)
-				tvMovieGenre.text = movie.genre
 				itemView.setOnClickListener {
 					val intent = Intent(itemView.context, DetailMovieActivity::class.java)
 					intent.putExtra(DetailMovieActivity.EXTRA_MOVIE, movie.movieId)
 					itemView.context.startActivity(intent)
 				}
 				Glide.with(itemView.context)
-					.load(movie.imagePath)
+					.load("${BuildConfig.BASE_IMAGE_URL}${movie.imagePath}")
 					.apply(RequestOptions.placeholderOf(R.drawable.ic_loading))
 					.error(R.drawable.ic_error)
 					.into(imgPoster)

@@ -32,6 +32,7 @@ ext {
     lottieVersion = '4.2.0'
     retrofitVersion = '2.9.0'
     loggingInterceptorVersion = '4.9.0'
+    idleResourceVersion = '3.2.0'
 
     materialVersion = '1.4.0'
     recyclerViewVersion = '1.2.1'

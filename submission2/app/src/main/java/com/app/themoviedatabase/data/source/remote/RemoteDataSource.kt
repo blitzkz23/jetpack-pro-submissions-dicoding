@@ -12,27 +12,45 @@ import retrofit2.awaitResponse
 
 class RemoteDataSource {
 
-	fun getPopularMovie(callback: PopularMovieCallback) {
+	fun getPopularMovie(callback: PopularCallback) {
 		CoroutineScope(Dispatchers.IO).launch {
-			val client = ApiConfig.getApiService().getPopularMovie(BuildConfig.MOVIEDB_TOKEN, 1)
-			try {
+			val client = ApiConfig.getApiService().getPopular("movie", BuildConfig.MOVIEDB_TOKEN, 1)
+//			try {
 				val response = client.awaitResponse()
 				if (response.isSuccessful) {
 					response.body()?.results?.let {
-						callback.onPopularMoviesReceived(it)
+						callback.onPopularDataReceived(it)
 					}
 				} else {
 					Log.d(TAG, "onResponse: ${response.message()}")
 				}
-			} catch (e: Exception) {
-				callback.onDataNotAvailable()
-			}
+//			} catch (e: Exception) {
+//				callback.onDataNotAvailable()
+//			}
 		}
 	}
 
-	interface PopularMovieCallback {
-		fun onPopularMoviesReceived(popularMovieResponses: List<ResultsItem>)
-		fun onDataNotAvailable()
+	fun getPopularTvShow(callback: PopularCallback) {
+		CoroutineScope(Dispatchers.IO).launch {
+			val client = ApiConfig.getApiService().getPopular("tv", BuildConfig.MOVIEDB_TOKEN, 1)
+//			try {
+				val response = client.awaitResponse()
+				if (response.isSuccessful) {
+					response.body()?.results?.let {
+						callback.onPopularDataReceived(it)
+					}
+				} else {
+					Log.d(TAG, "onResponse: ${response.message()}")
+				}
+//			} catch (e: Exception) {
+//				callback.onDataNotAvailable()
+//			}
+		}
+	}
+
+	interface PopularCallback {
+		fun onPopularDataReceived(popularResponses: List<ResultsItem>)
+//		fun onDataNotAvailable()
 	}
 
 	companion object {

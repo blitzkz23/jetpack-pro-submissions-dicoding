@@ -31,7 +31,8 @@
             android:id="@+id/tv_movie_title"
             style="@style/TextContent.Title"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
             android:ellipsize="end"
             android:gravity="start"
             android:maxLines="2"
@@ -43,6 +44,7 @@
         <TextView
             android:id="@+id/tv_movie_date"
             style="@style/TextContent.SubText"
+            android:layout_marginTop="8dp"
             android:gravity="start"
             app:layout_constraintStart_toStartOf="@+id/tv_movie_title"
             app:layout_constraintTop_toBottomOf="@+id/tv_movie_title"
@@ -52,21 +54,12 @@
             android:id="@+id/tv_movie_rate"
             style="@style/TextContent.SubTitle"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="16dp"
             android:drawablePadding="4dp"
             app:drawableStartCompat="@drawable/star"
-            app:layout_constraintStart_toStartOf="@+id/tv_movie_genre"
-            app:layout_constraintTop_toBottomOf="@+id/tv_movie_genre"
-            tools:text="75/100" />
-
-        <TextView
-            android:id="@+id/tv_movie_genre"
-            style="@style/TextContent"
-            android:layout_marginTop="4dp"
-            android:gravity="start"
             app:layout_constraintStart_toStartOf="@+id/tv_movie_date"
             app:layout_constraintTop_toBottomOf="@+id/tv_movie_date"
-            tools:text="@string/genres" />
+            tools:text="75/100" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

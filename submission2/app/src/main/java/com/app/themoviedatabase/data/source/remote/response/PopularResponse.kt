@@ -34,7 +34,7 @@ data class ResultsItem(
 	@field:SerializedName("video")
 	val video: Boolean,
 
-	@field:SerializedName("title")
+	@field:SerializedName("title", alternate=["name"])
 	val title: String,
 
 	@field:SerializedName("genre_ids")
@@ -46,7 +46,7 @@ data class ResultsItem(
 	@field:SerializedName("backdrop_path")
 	val backdropPath: String?,
 
-	@field:SerializedName("release_date")
+	@field:SerializedName("release_date", alternate=["first_air_date"])
 	val releaseDate: String,
 
 	@field:SerializedName("popularity")

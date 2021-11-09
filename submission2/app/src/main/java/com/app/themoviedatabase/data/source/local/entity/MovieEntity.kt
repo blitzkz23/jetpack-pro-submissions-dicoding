@@ -9,5 +9,6 @@ data class MovieEntity(
 	val score: Double,
 //	val duration: String,
 	val imagePath: String?,
+	val backdropPath:String?
 //	var favorited: Boolean = false,
 )
