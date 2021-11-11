@@ -1,4 +1,4 @@
-package com.app.academy.utils
+package com.app.academy
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer

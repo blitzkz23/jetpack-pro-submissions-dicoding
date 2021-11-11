@@ -3,7 +3,7 @@ package com.app.academy.data
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.app.academy.data.source.remote.RemoteDataSource
 import com.app.academy.utils.DataDummy
-import com.app.academy.utils.LiveDataTestUtil
+import com.app.academy.LiveDataTestUtil
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.doAnswer
 import com.nhaarman.mockitokotlin2.eq

@@ -30,11 +30,11 @@ class ModuleListAdapter internal constructor(private val listener: MyAdapterClic
 		return ModuleViewHolder(binding)
 	}
 
-	override fun onBindViewHolder(holder: ModuleViewHolder, position: Int) {
+	override fun onBindViewHolder(viewHolder: ModuleViewHolder, position: Int) {
 		val module = listModules[position]
-		holder.bind(module)
-		holder.itemView.setOnClickListener {
-			listener.onItemClicked(holder.adapterPosition, listModules[holder.adapterPosition].moduleId)
+		viewHolder.bind(module)
+		viewHolder.itemView.setOnClickListener {
+			listener.onItemClicked(viewHolder.adapterPosition, listModules[viewHolder.adapterPosition].moduleId)
 		}
 	}
 
