@@ -33,7 +33,7 @@ class MyButton : AppCompatButton {
 		background = if (isEnabled) enabledBackground else disabledBackground
 		setTextColor(textColour)
 		textSize = 12f
-		gravity = CENTER                    
+		gravity = CENTER
 	}
 
 	private fun init() {
