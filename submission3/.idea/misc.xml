@@ -4,11 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission3/app/src/main/res/drawable/ic_favorite.xml" value="0.33645833333333336" />
+        <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission3/app/src/main/res/drawable/ic_favourite.xml" value="0.33645833333333336" />
+        <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission3/app/src/main/res/drawable/ic_favourite_white.xml" value="0.33645833333333336" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission3/app/src/main/res/drawable/ic_unfavorite.xml" value="0.33645833333333336" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission3/app/src/main/res/layout/activity_detail.xml" value="0.22418478260869565" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission3/app/src/main/res/layout/activity_favorites.xml" value="0.2826086956521739" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission3/app/src/main/res/layout/activity_home.xml" value="0.2826086956521739" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission3/app/src/main/res/layout/content_detail.xml" value="0.2753623188405797" />
+        <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission3/app/src/main/res/layout/fragment_favorite_tv_show.xml" value="0.3138586956521739" />
+        <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission3/app/src/main/res/layout/fragment_movie.xml" value="0.31614583333333335" />
+        <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission3/app/src/main/res/layout/fragment_tv_show.xml" value="0.31614583333333335" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission3/app/src/main/res/menu/menu.xml" value="0.31614583333333335" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/belajar-android-jetpack-pro/jetpack-pro-submissions/submission3/app/src/main/res/menu/menu_home.xml" value="0.16197916666666667" />
       </map>

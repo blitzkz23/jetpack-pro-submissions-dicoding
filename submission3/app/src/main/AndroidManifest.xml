@@ -14,7 +14,11 @@
         android:theme="@style/Theme.TheMovieDatabase">
         <activity
             android:name=".ui.favorites.FavoritesActivity"
-            android:exported="false" />
+            android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.home.HomeActivity" />
+        </activity>
         <activity
             android:name=".ui.home.SplashActivity"
             android:exported="true"
@@ -45,7 +49,7 @@
         <activity
             android:name=".ui.home.HomeActivity"
             android:exported="true"
-            android:theme="@style/Theme.TheMovieDatabase.NoActionBar"></activity>
+            android:theme="@style/Theme.TheMovieDatabase.NoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"

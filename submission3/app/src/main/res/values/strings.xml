@@ -17,11 +17,13 @@
     <string name="tmdb_logo">tmdb_logo</string>
     <string name="poster_image">poster image</string>
     <string name="popular">Popular</string>
-    <string name="favorites">Favorites</string>
+    <string name="favourites">Favourites</string>
     <string name="fav_button">favorite button</string>
 
     <string-array name="tab_title">
         <item>@string/movie</item>
         <item>@string/tv_show</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

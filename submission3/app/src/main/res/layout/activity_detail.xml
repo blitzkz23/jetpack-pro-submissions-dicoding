@@ -91,9 +91,9 @@
         android:layout_marginBottom="64dp"
         android:backgroundTint="@color/white"
         android:contentDescription="@string/fav_button"
-        android:src="@drawable/ic_favourite"
-        app:layout_anchor="@id/content"
-        app:layout_anchorGravity="right|top|center_vertical"
+        android:src="@drawable/ic_unfavourite"
+        app:layout_anchor="@id/appBarLayout"
+        app:layout_anchorGravity="bottom|right|center_vertical"
         tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

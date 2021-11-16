@@ -31,7 +31,6 @@ class HomeActivity : AppCompatActivity() {
 		}.attach()
 
 		supportActionBar?.elevation = 0f
-
 		supportActionBar?.setDisplayUseLogoEnabled(true)
 	}
 
