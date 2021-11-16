@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.app.themoviedatabase" >
+    package="com.app.themoviedatabase">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,11 +11,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_tmdb_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TheMovieDatabase" >
+        android:theme="@style/Theme.TheMovieDatabase">
+        <activity
+            android:name=".ui.favorites.FavoritesActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.home.SplashActivity"
-            android:theme="@style/Theme.TheMovieDatabase.NoActionBar"
-            android:exported="true" >
+            android:exported="true"
+            android:theme="@style/Theme.TheMovieDatabase.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,7 +28,7 @@
         <activity
             android:name=".ui.detail.tvshow.DetailTvShowActivity"
             android:exported="false"
-            android:theme="@style/Theme.TheMovieDatabase.NoActionBar" >
+            android:theme="@style/Theme.TheMovieDatabase.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.home.HomeActivity" />
@@ -34,7 +37,7 @@
             android:name=".ui.detail.movie.DetailMovieActivity"
             android:exported="false"
             android:label="@string/title_activity_detail"
-            android:theme="@style/Theme.TheMovieDatabase.NoActionBar" >
+            android:theme="@style/Theme.TheMovieDatabase.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.home.HomeActivity" />
@@ -42,8 +45,7 @@
         <activity
             android:name=".ui.home.HomeActivity"
             android:exported="true"
-            android:theme="@style/Theme.TheMovieDatabase.NoActionBar" >
-        </activity>
+            android:theme="@style/Theme.TheMovieDatabase.NoActionBar"></activity>
 
         <meta-data
             android:name="preloaded_fonts"

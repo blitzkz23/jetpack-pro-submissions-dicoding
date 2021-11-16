@@ -20,7 +20,7 @@ class LocalDataSource private constructor(private val mMovieDbDao: MovieDbDao){
 
 	fun getFavouritedMovies(): LiveData<List<MovieEntity>> = mMovieDbDao.getFavouritedMovie()
 
-	fun getMovieById(movieId: String): LiveData<MovieEntity> = mMovieDbDao.getMovieById(movieId)
+	fun getMovieById(movieId: Int): LiveData<MovieEntity> = mMovieDbDao.getMovieById(movieId)
 
 	fun insertMovies(movies: List<MovieEntity>) = mMovieDbDao.insertMovies(movies)
 
@@ -36,7 +36,7 @@ class LocalDataSource private constructor(private val mMovieDbDao: MovieDbDao){
 
 	fun getFavouritedTvShows(): LiveData<List<TvShowEntity>> = mMovieDbDao.getFavouritedTvShows()
 
-	fun getTvShowById(tvShowId: String): LiveData<TvShowEntity> = mMovieDbDao.getTvShowById(tvShowId)
+	fun getTvShowById(tvShowId: Int): LiveData<TvShowEntity> = mMovieDbDao.getTvShowById(tvShowId)
 
 	fun insertTvShows(tvShows: List<TvShowEntity>) = mMovieDbDao.insertTvShow(tvShows)
 

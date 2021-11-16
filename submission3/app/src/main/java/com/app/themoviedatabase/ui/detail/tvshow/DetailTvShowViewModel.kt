@@ -12,5 +12,5 @@ class DetailTvShowViewModel(private val movieDbRepository: MovieDbRepository) : 
 		this.tvShowId = tvShowId
 	}
 
-	fun getTvShow(): LiveData<TvShowEntity> = movieDbRepository.getPopularTvShowById(tvShowId)
+	fun getTvShow(): LiveData<TvShowEntity> = movieDbRepository.getTvShowById(tvShowId)
 }

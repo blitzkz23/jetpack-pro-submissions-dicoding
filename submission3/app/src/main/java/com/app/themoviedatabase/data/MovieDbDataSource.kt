@@ -11,7 +11,7 @@ interface MovieDbDataSource {
 
 	fun getFavouritedMovies(): LiveData<List<MovieEntity>>
 
-	fun getMovieById(movieId: String): LiveData<MovieEntity>
+	fun getMovieById(movieId: Int): LiveData<MovieEntity>
 
 	fun setFavoriteMovie(movie: MovieEntity, state: Boolean)
 
@@ -21,7 +21,7 @@ interface MovieDbDataSource {
 
 	fun getFavouritedTvShows(): LiveData<List<TvShowEntity>>
 
-	fun getTvShowById(tvShowId: String): LiveData<TvShowEntity>
+	fun getTvShowById(tvShowId: Int): LiveData<TvShowEntity>
 
 	fun setFavoriteTvSHow(tvShow: TvShowEntity, state: Boolean)
 //	fun getPopularTvShowById(tvShowId: Int): LiveData<TvShowEntity>

@@ -52,7 +52,7 @@ class MovieDbRepository private constructor(
 	override fun getFavouritedMovies(): LiveData<List<MovieEntity>> =
 		localDataSource.getFavouritedMovies()
 
-	override fun getMovieById(movieId: String): LiveData<MovieEntity> =
+	override fun getMovieById(movieId: Int): LiveData<MovieEntity> =
 		localDataSource.getMovieById(movieId)
 
 	override fun setFavoriteMovie(movie: MovieEntity, state: Boolean) {
@@ -68,7 +68,7 @@ class MovieDbRepository private constructor(
 				data == null || data.isEmpty()
 
 			override fun createCall(): LiveData<ApiResponse<List<ResultsItem>>> =
-				remoteDataSource.getPopularMovie()
+				remoteDataSource.getPopularTvShow()
 
 			override fun saveCallResult(data: List<ResultsItem>) {
 				val popularTvShowList = ArrayList<TvShowEntity>()
@@ -94,7 +94,7 @@ class MovieDbRepository private constructor(
 	override fun getFavouritedTvShows(): LiveData<List<TvShowEntity>> =
 		localDataSource.getFavouritedTvShows()
 
-	override fun getTvShowById(tvShowId: String): LiveData<TvShowEntity> =
+	override fun getTvShowById(tvShowId: Int): LiveData<TvShowEntity> =
 		localDataSource.getTvShowById(tvShowId)
 
 	override fun setFavoriteTvSHow(tvShow: TvShowEntity, state: Boolean) =

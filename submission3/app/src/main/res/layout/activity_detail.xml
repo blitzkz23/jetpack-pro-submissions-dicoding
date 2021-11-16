@@ -83,4 +83,17 @@
         app:layout_anchor="@id/content"
         app:layout_anchorGravity="center|top|center_vertical" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_favourite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="64dp"
+        android:backgroundTint="@color/white"
+        android:contentDescription="@string/fav_button"
+        android:src="@drawable/ic_favourite"
+        app:layout_anchor="@id/content"
+        app:layout_anchorGravity="right|top|center_vertical"
+        tools:ignore="SpeakableTextPresentCheck" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

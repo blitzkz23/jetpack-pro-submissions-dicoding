@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.themoviedatabase.data.ViewModelFactory
 import com.app.themoviedatabase.databinding.FragmentTvShowBinding
+import com.dicoding.academies.vo.Status
 
 class TvShowFragment : Fragment() {
 
@@ -31,11 +33,21 @@ class TvShowFragment : Fragment() {
 		viewModel = ViewModelProvider(this, factory)[TvShowViewModel::class.java]
 
 		val tvShowAdapter = TvShowAdapter()
-		fragmentTvShowBinding?.progressBar?.visibility = View.VISIBLE
 		viewModel.getTvShows().observe(viewLifecycleOwner, { tvShows ->
-			fragmentTvShowBinding?.progressBar?.visibility = View.GONE
-			tvShowAdapter.setTvShows(tvShows)
-			tvShowAdapter.notifyDataSetChanged()
+			if (tvShows != null) {
+				when (tvShows.status) {
+					Status.LOADING -> fragmentTvShowBinding?.progressBar?.visibility = View.VISIBLE
+					Status.SUCCESS -> {
+						fragmentTvShowBinding?.progressBar?.visibility = View.GONE
+						tvShowAdapter.setTvShows(tvShows.data)
+						tvShowAdapter.notifyDataSetChanged()
+					}
+					Status.ERROR -> {
+						fragmentTvShowBinding?.progressBar?.visibility = View.GONE
+						Toast.makeText(context, "Data failed to load.", Toast.LENGTH_SHORT).show()
+					}
+				}
+			}
 		})
 
 		fragmentTvShowBinding?.rvTvShow?.apply{

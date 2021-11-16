@@ -1,13 +1,11 @@
 package com.app.themoviedatabase.data.source.local.room
 
 import androidx.lifecycle.LiveData
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 import com.app.themoviedatabase.data.source.local.entity.MovieEntity
 import com.app.themoviedatabase.data.source.local.entity.TvShowEntity
 
+@Dao
 interface MovieDbDao {
 
 	/**
@@ -20,7 +18,7 @@ interface MovieDbDao {
 	fun getFavouritedMovie(): LiveData<List<MovieEntity>>
 
 	@Query("SELECT * FROM movieentities WHERE movieId = :movieId")
-	fun getMovieById(movieId: String): LiveData<MovieEntity>
+	fun getMovieById(movieId: Int): LiveData<MovieEntity>
 
 	@Insert(onConflict = OnConflictStrategy.REPLACE)
 	fun insertMovies(movies: List<MovieEntity>)
@@ -38,7 +36,7 @@ interface MovieDbDao {
 	fun getFavouritedTvShows(): LiveData<List<TvShowEntity>>
 
 	@Query("SELECT * FROM tvshowentities WHERE tvShowId = :tvShowId")
-	fun getTvShowById(tvShowId: String): LiveData<TvShowEntity>
+	fun getTvShowById(tvShowId: Int): LiveData<TvShowEntity>
 
 	@Insert(onConflict = OnConflictStrategy.REPLACE)
 	fun insertTvShow(tvShows: List<TvShowEntity>)

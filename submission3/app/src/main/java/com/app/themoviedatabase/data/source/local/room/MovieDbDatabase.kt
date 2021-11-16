@@ -10,6 +10,7 @@ import com.app.themoviedatabase.data.source.local.entity.TvShowEntity
 @Database(
 	entities = [MovieEntity::class, TvShowEntity::class],
 	version = 1,
+	exportSchema = false
 )
 /**
  * Instance of local database room with two entities.

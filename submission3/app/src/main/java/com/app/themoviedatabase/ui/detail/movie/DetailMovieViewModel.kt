@@ -12,6 +12,6 @@ class DetailMovieViewModel(private val movieDbRepository: MovieDbRepository) : V
 		this.movieId = movieId
 	}
 
-	fun getMovie(): LiveData<MovieEntity> = movieDbRepository.getPopularMovieById(movieId)
+	fun getMovie(): LiveData<MovieEntity> = movieDbRepository.getMovieById(movieId)
 
 }
