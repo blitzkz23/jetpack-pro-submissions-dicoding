@@ -1,6 +1,7 @@
 package com.app.themoviedatabase.ui.detail.movie
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -41,18 +42,37 @@ class DetailMovieActivity : AppCompatActivity() {
 			activityDetailBinding?.content?.visibility = View.INVISIBLE
 
 			viewModel.setSelectedMovie(movieId)
-			viewModel.getMovie().observe(this, { movies ->
+			viewModel.movieDetail.observe(this, { movieEntity ->
 				activityDetailBinding?.progressBar?.visibility = View.GONE
 				activityDetailBinding?.content?.visibility = View.VISIBLE
 
-				populateMovies(movies)
+				populateMovies(movieEntity)
+				val state = movieEntity.favourited
+				setFavoritedState(state)
+				Log.d("ini nama state", "Ini nama $state")
+				Log.d("Ini nama movie", "Ini nama ${movieEntity.title}")
+
+				activityDetailBinding?.fabFavourite?.setOnClickListener {
+					viewModel.setFavorited()
+				}
 			})
+		}
+	}
+
+	private fun setFavoritedState(state: Boolean) {
+		if (state) {
+			activityDetailBinding?.fabFavourite?.setImageResource(R.drawable.ic_favourite)
+		} else {
+			activityDetailBinding?.fabFavourite?.setImageResource(R.drawable.ic_unfavourite)
 		}
 	}
 
 	private fun populateMovies(movieEntity: MovieEntity) {
 		detailContentBinding?.apply {
 			supportActionBar?.title = movieEntity.title
+
+			Log.d("Ini nama movie 2 ", "${movieEntity.title}")
+
 			tvDetailTitle.text = movieEntity.title
 			tvDetailDate.text = movieEntity.releaseDate
 			tvDetailLanguage.text = movieEntity.language

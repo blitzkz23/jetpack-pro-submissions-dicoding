@@ -45,7 +45,7 @@ class DetailMovieViewModelTest {
 		movie.value = dummyMovies
 
 		`when`(movieDbRepository.getPopularMovieById(movieId)).thenReturn(movie)
-		val movieEntity = viewModel.getMovie().value as MovieEntity
+		val movieEntity = viewModel.getMovieById().value as MovieEntity
 		verify(movieDbRepository).getPopularMovieById(movieId)
 
 		assertNotNull(movieEntity)
@@ -57,7 +57,7 @@ class DetailMovieViewModelTest {
 		assertEquals(dummyMovies.popularity, movieEntity.popularity, 0.0001)
 		assertEquals(dummyMovies.overview, movieEntity.overview)
 
-		viewModel.getMovie().observeForever(observer)
+		viewModel.getMovieById().observeForever(observer)
 		verify(observer).onChanged(dummyMovies)
 	}
 }
