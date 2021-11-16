@@ -1,14 +1,14 @@
 package com.app.themoviedatabase.data
 
-import android.util.Log
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.app.themoviedatabase.data.source.local.LocalDataSource
 import com.app.themoviedatabase.data.source.local.entity.MovieEntity
 import com.app.themoviedatabase.data.source.local.entity.TvShowEntity
+import com.app.themoviedatabase.data.source.remote.ApiResponse
 import com.app.themoviedatabase.data.source.remote.RemoteDataSource
 import com.app.themoviedatabase.data.source.remote.response.ResultsItem
 import com.app.themoviedatabase.utils.AppExecutors
+import com.dicoding.academies.vo.Resource
 
 class MovieDbRepository private constructor(
 	private val remoteDataSource: RemoteDataSource,
@@ -17,12 +17,20 @@ class MovieDbRepository private constructor(
 ) :
 	MovieDbDataSource {
 
-	override fun getAllPopularMovies(): LiveData<List<MovieEntity>> {
-		val popularMovieResults = MutableLiveData<List<MovieEntity>>()
-		remoteDataSource.getPopularMovie(object : RemoteDataSource.PopularCallback {
-			override fun onPopularDataReceived(popularResponses: List<ResultsItem>) {
+	override fun getAllPopularMovies(): LiveData<Resource<List<MovieEntity>>> {
+		return object : NetworkBoundResource<List<MovieEntity>, List<ResultsItem>>(appExecutors) {
+			override fun loadFromDB(): LiveData<List<MovieEntity>> =
+				localDataSource.getMovies()
+
+			override fun shouldFetch(data: List<MovieEntity>?): Boolean =
+				data == null || data.isEmpty()
+
+			override fun createCall(): LiveData<ApiResponse<List<ResultsItem>>> =
+				remoteDataSource.getPopularMovie()
+
+			override fun saveCallResult(data: List<ResultsItem>) {
 				val popularMovieList = ArrayList<MovieEntity>()
-				for (response in popularResponses) {
+				for (response in data) {
 					val movie = MovieEntity(
 						response.id,
 						response.title,
@@ -36,52 +44,35 @@ class MovieDbRepository private constructor(
 					)
 					popularMovieList.add(movie)
 				}
-				popularMovieResults.postValue(popularMovieList)
+				localDataSource.insertMovies(popularMovieList)
 			}
-
-			override fun onDataNotAvailable() {
-				Log.e(TAG, "onFailure: Movie failed to load.")
-			}
-		})
-		return popularMovieResults
+		}.asLiveData()
 	}
 
-	override fun getPopularMovieById(movieId: Int): LiveData<MovieEntity> {
-		val popularMovieResults = MutableLiveData<MovieEntity>()
-		remoteDataSource.getPopularMovie(object : RemoteDataSource.PopularCallback {
-			override fun onPopularDataReceived(popularResponses: List<ResultsItem>) {
-				lateinit var movie: MovieEntity
-				for (response in popularResponses) {
-					if (response.id == movieId) {
-						movie = MovieEntity(
-							response.id,
-							response.title,
-							response.releaseDate,
-							response.overview,
-							response.originalLanguage,
-							response.voteAverage,
-							response.popularity,
-							response.posterPath,
-							response.backdropPath,
-						)
-					}
-				}
-				popularMovieResults.postValue(movie)
-			}
+	override fun getFavouritedMovies(): LiveData<List<MovieEntity>> =
+		localDataSource.getFavouritedMovies()
 
-			override fun onDataNotAvailable() {
-				Log.e(TAG, "onFailure: Movie failed to load.")
-			}
-		})
-		return popularMovieResults
+	override fun getMovieById(movieId: String): LiveData<MovieEntity> =
+		localDataSource.getMovieById(movieId)
+
+	override fun setFavoriteMovie(movie: MovieEntity, state: Boolean) {
+		appExecutors.diskIO().execute { localDataSource.setFavoriteMovie(movie, state) }
 	}
 
-	override fun getAllPopularTvShows(): LiveData<List<TvShowEntity>> {
-		val popularTvShowResults = MutableLiveData<List<TvShowEntity>>()
-		remoteDataSource.getPopularTvShow(object : RemoteDataSource.PopularCallback {
-			override fun onPopularDataReceived(popularResponses: List<ResultsItem>) {
+	override fun getAllPopularTvShows(): LiveData<Resource<List<TvShowEntity>>> {
+		return object : NetworkBoundResource<List<TvShowEntity>, List<ResultsItem>>(appExecutors) {
+			override fun loadFromDB(): LiveData<List<TvShowEntity>> =
+				localDataSource.getTvShows()
+
+			override fun shouldFetch(data: List<TvShowEntity>?): Boolean =
+				data == null || data.isEmpty()
+
+			override fun createCall(): LiveData<ApiResponse<List<ResultsItem>>> =
+				remoteDataSource.getPopularMovie()
+
+			override fun saveCallResult(data: List<ResultsItem>) {
 				val popularTvShowList = ArrayList<TvShowEntity>()
-				for (response in popularResponses) {
+				for (response in data) {
 					val tvShows = TvShowEntity(
 						response.id,
 						response.title,
@@ -95,46 +86,19 @@ class MovieDbRepository private constructor(
 					)
 					popularTvShowList.add(tvShows)
 				}
-				popularTvShowResults.postValue(popularTvShowList)
+				localDataSource.insertTvShows(popularTvShowList)
 			}
-
-			override fun onDataNotAvailable() {
-				Log.e(TAG, "onFailure: TvShow failed to load.")
-			}
-		})
-		return popularTvShowResults
+		}.asLiveData()
 	}
 
-	override fun getPopularTvShowById(tvShowId: Int): LiveData<TvShowEntity> {
-		val popularTvShowResult = MutableLiveData<TvShowEntity>()
-		remoteDataSource.getPopularTvShow(object : RemoteDataSource.PopularCallback {
-			override fun onPopularDataReceived(popularResponses: List<ResultsItem>) {
-				lateinit var tvShow: TvShowEntity
-				for (response in popularResponses) {
-					if (response.id == tvShowId) {
-						tvShow = TvShowEntity(
-							response.id,
-							response.title,
-							response.releaseDate,
-							response.overview,
-							response.originalLanguage,
-							response.voteAverage,
-							response.popularity,
-							response.posterPath,
-							response.backdropPath,
-						)
-					}
-				}
-				popularTvShowResult.postValue(tvShow)
-			}
+	override fun getFavouritedTvShows(): LiveData<List<TvShowEntity>> =
+		localDataSource.getFavouritedTvShows()
 
-			override fun onDataNotAvailable() {
-				Log.e(TAG, "onFailure: TvShow failed to load.")
-			}
-		})
-		return popularTvShowResult
-	}
+	override fun getTvShowById(tvShowId: String): LiveData<TvShowEntity> =
+		localDataSource.getTvShowById(tvShowId)
 
+	override fun setFavoriteTvSHow(tvShow: TvShowEntity, state: Boolean) =
+		appExecutors.diskIO().execute { localDataSource.setFavoriteTvShow(tvShow, state) }
 
 	companion object {
 		@Volatile
