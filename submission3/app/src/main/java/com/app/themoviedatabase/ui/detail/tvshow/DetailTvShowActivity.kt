@@ -41,14 +41,27 @@ class DetailTvShowActivity : AppCompatActivity() {
 			activityDetailBinding?.content?.visibility = View.INVISIBLE
 
 			viewModel.setSelectedTvShow(tvShowId)
-			viewModel.getTvShow().observe(this, { tvShows ->
+			viewModel.tvShowDetail.observe(this, { tvShowEntity ->
 				activityDetailBinding?.progressBar?.visibility = View.GONE
 				activityDetailBinding?.content?.visibility = View.VISIBLE
 
-				populateTvShow(tvShows)
+				populateTvShow(tvShowEntity)
+				val state = tvShowEntity.favourited
+				setFavoritedState(state)
+				activityDetailBinding?.fabFavourite?.setOnClickListener {
+					viewModel.setFavorited()
+				}
 			})
 
 
+		}
+	}
+
+	private fun setFavoritedState(state: Boolean) {
+		if (state) {
+			activityDetailBinding?.fabFavourite?.setImageResource(R.drawable.ic_favourite)
+		} else {
+			activityDetailBinding?.fabFavourite?.setImageResource(R.drawable.ic_unfavourite)
 		}
 	}
 

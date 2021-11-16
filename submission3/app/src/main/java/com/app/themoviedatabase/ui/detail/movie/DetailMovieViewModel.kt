@@ -1,6 +1,5 @@
 package com.app.themoviedatabase.ui.detail.movie
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
@@ -21,14 +20,9 @@ class DetailMovieViewModel(private val movieDbRepository: MovieDbRepository) : V
 
 	fun setFavorited() {
 		val movieEntity = movieDetail.value
-		Log.d("setFav", "outside movie ${movieEntity?.title}")
 		if (movieEntity != null) {
-
 			val newState = !movieEntity.favourited
-			Log.d("setFav", "inside movies $newState")
 			movieDbRepository.setFavoriteMovie(movieEntity, newState)
 		}
-
 	}
-
 }

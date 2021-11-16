@@ -49,9 +49,6 @@ class DetailMovieActivity : AppCompatActivity() {
 				populateMovies(movieEntity)
 				val state = movieEntity.favourited
 				setFavoritedState(state)
-				Log.d("ini nama state", "Ini nama $state")
-				Log.d("Ini nama movie", "Ini nama ${movieEntity.title}")
-
 				activityDetailBinding?.fabFavourite?.setOnClickListener {
 					viewModel.setFavorited()
 				}
@@ -70,9 +67,6 @@ class DetailMovieActivity : AppCompatActivity() {
 	private fun populateMovies(movieEntity: MovieEntity) {
 		detailContentBinding?.apply {
 			supportActionBar?.title = movieEntity.title
-
-			Log.d("Ini nama movie 2 ", "${movieEntity.title}")
-
 			tvDetailTitle.text = movieEntity.title
 			tvDetailDate.text = movieEntity.releaseDate
 			tvDetailLanguage.text = movieEntity.language
