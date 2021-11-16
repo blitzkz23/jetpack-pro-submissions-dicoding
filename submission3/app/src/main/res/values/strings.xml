@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">The Movie Database</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="title_activity_detail">DetailActivity</string>
+    <!-- Strings used for fragments for navigation -->
+
+    <string name="movie">Movie</string>
+    <string name="tv_show">TV Show</string>
+    <string name="title">Title</string>
+    <string name="rating_placeholder">%.1f</string>
+    <string name="release_date">Release Date</string>
+    <string name="popularity">Popularity</string>
+    <string name="description_placeholder">Description</string>
+    <string name="language">Language</string>
+    <string name="overview">Overview</string>
+    <string name="moviedb_logo">MovieDb Logo</string>
+    <string name="tmdb_logo">tmdb_logo</string>
+    <string name="poster_image">poster image</string>
+    <string name="popular">Popular</string>
+    <string name="favorites">Favorites</string>
+
+    <string-array name="tab_title">
+        <item>@string/movie</item>
+        <item>@string/tv_show</item>
+    </string-array>
+</resources>
