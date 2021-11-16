@@ -1,9 +1,11 @@
 package com.app.themoviedatabase.data.source.local.room
 
 import androidx.lifecycle.LiveData
+import androidx.paging.DataSource
 import androidx.room.*
 import com.app.themoviedatabase.data.source.local.entity.MovieEntity
 import com.app.themoviedatabase.data.source.local.entity.TvShowEntity
+
 
 @Dao
 interface MovieDbDao {
@@ -12,7 +14,7 @@ interface MovieDbDao {
 	 * Query for movie
 	 */
 	@Query("SELECT * FROM movieentities")
-	fun getMovies(): LiveData<List<MovieEntity>>
+	fun getMovies(): DataSource.Factory<Int, MovieEntity>
 
 	@Query("SELECT * FROM movieentities WHERE favourited = 1")
 	fun getFavouritedMovie(): LiveData<List<MovieEntity>>
@@ -30,7 +32,7 @@ interface MovieDbDao {
 	 * Query for tv show
 	 */
 	@Query("SELECT * FROM tvshowentities")
-	fun getTvShows(): LiveData<List<TvShowEntity>>
+	fun getTvShows(): DataSource.Factory<Int, TvShowEntity>
 
 	@Query("SELECT * FROM tvshowentities WHERE favourited = 1")
 	fun getFavouritedTvShows(): LiveData<List<TvShowEntity>>

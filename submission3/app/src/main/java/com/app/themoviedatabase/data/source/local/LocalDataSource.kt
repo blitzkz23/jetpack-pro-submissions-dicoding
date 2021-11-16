@@ -1,6 +1,7 @@
 package com.app.themoviedatabase.data.source.local
 
 import androidx.lifecycle.LiveData
+import androidx.paging.DataSource
 import com.app.themoviedatabase.data.source.local.entity.MovieEntity
 import com.app.themoviedatabase.data.source.local.entity.TvShowEntity
 import com.app.themoviedatabase.data.source.local.room.MovieDbDao
@@ -16,7 +17,7 @@ class LocalDataSource private constructor(private val mMovieDbDao: MovieDbDao){
 	/**
 	 * Movie
 	 */
-	fun getMovies(): LiveData<List<MovieEntity>> = mMovieDbDao.getMovies()
+	fun getMovies(): DataSource.Factory<Int, MovieEntity> = mMovieDbDao.getMovies()
 
 	fun getFavouritedMovies(): LiveData<List<MovieEntity>> = mMovieDbDao.getFavouritedMovie()
 
@@ -32,7 +33,7 @@ class LocalDataSource private constructor(private val mMovieDbDao: MovieDbDao){
 	/**
 	 * TvShows
 	 */
-	fun getTvShows(): LiveData<List<TvShowEntity>> = mMovieDbDao.getTvShows()
+	fun getTvShows(): DataSource.Factory<Int, TvShowEntity> = mMovieDbDao.getTvShows()
 
 	fun getFavouritedTvShows(): LiveData<List<TvShowEntity>> = mMovieDbDao.getFavouritedTvShows()
 
