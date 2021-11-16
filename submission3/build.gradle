@@ -36,6 +36,8 @@ ext {
     idleResourceVersion = '3.4.0'
     mockitoKotlinVersion = '2.2.0'
     mockitoInlineVersion = '3.9.0'
+    roomVersion = '2.2.3'
+    roomRuntimeVersion = '2.2.5'
 
     materialVersion = '1.4.0'
     recyclerViewVersion = '1.2.1'

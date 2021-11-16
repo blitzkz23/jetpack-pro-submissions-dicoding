@@ -3,12 +3,18 @@ package com.app.themoviedatabase.data
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.app.themoviedatabase.data.source.local.LocalDataSource
 import com.app.themoviedatabase.data.source.local.entity.MovieEntity
 import com.app.themoviedatabase.data.source.local.entity.TvShowEntity
 import com.app.themoviedatabase.data.source.remote.RemoteDataSource
 import com.app.themoviedatabase.data.source.remote.response.ResultsItem
+import com.app.themoviedatabase.utils.AppExecutors
 
-class MovieDbRepository private constructor(private val remoteDataSource: RemoteDataSource) :
+class MovieDbRepository private constructor(
+	private val remoteDataSource: RemoteDataSource,
+	private val localDataSource: LocalDataSource,
+	private val appExecutors: AppExecutors
+) :
 	MovieDbDataSource {
 
 	override fun getAllPopularMovies(): LiveData<List<MovieEntity>> {
@@ -135,9 +141,13 @@ class MovieDbRepository private constructor(private val remoteDataSource: Remote
 		private var instance: MovieDbRepository? = null
 		private const val TAG = "MovieDbRepository"
 
-		fun getInstance(remoteData: RemoteDataSource): MovieDbRepository =
+		fun getInstance(
+			remoteData: RemoteDataSource,
+			locaData: LocalDataSource,
+			appExecutors: AppExecutors
+		): MovieDbRepository =
 			instance ?: synchronized(this) {
-				MovieDbRepository(remoteData).apply { instance = this }
+				MovieDbRepository(remoteData, locaData, appExecutors).apply { instance = this }
 			}
 	}
 

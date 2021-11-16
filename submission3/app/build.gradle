@@ -79,4 +79,8 @@ dependencies {
 
     // animation
     implementation "com.airbnb.android:lottie:$lottieVersion"
+
+    //room db
+    implementation "androidx.room:room-runtime:$roomRuntimeVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
 }
