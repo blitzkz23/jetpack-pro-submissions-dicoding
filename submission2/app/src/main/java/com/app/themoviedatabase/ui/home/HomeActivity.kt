@@ -29,6 +29,5 @@ class HomeActivity : AppCompatActivity() {
 		supportActionBar?.elevation = 0f
 
 		supportActionBar?.setDisplayUseLogoEnabled(true)
-		supportActionBar?.setLogo(R.drawable.splash)
 	}
 }

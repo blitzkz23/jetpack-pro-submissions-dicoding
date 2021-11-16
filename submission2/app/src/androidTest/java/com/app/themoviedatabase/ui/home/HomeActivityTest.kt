@@ -52,6 +52,11 @@ class HomeActivityTest {
 		onView(withId(R.id.tv_detail_title)).check(ViewAssertions.matches(withText(dummyMovie[0].title)))
 		onView(withId(R.id.tv_detail_date)).check(ViewAssertions.matches(isDisplayed()))
 		onView(withId(R.id.tv_detail_date)).check(ViewAssertions.matches(withText(dummyMovie[0].releaseDate)))
+		onView(withId(R.id.tv_detail_description)).check(ViewAssertions.matches(isDisplayed()))
+		onView(withId(R.id.tv_detail_description)).check(ViewAssertions.matches(withText(dummyMovie[0].overview)))
+		onView(withId(R.id.img_poster)).check(ViewAssertions.matches(isDisplayed()))
+		onView(withId(R.id.tv_detail_language)).check(ViewAssertions.matches(isDisplayed()))
+		onView(withId(R.id.tv_detail_language)).check(ViewAssertions.matches(withText(dummyMovie[0].language)))
 	}
 
 	@Test
@@ -71,5 +76,10 @@ class HomeActivityTest {
 		onView(withId(R.id.tv_detail_title)).check(ViewAssertions.matches(withText(dummyShow[0].title)))
 		onView(withId(R.id.tv_detail_date)).check(ViewAssertions.matches(isDisplayed()))
 		onView(withId(R.id.tv_detail_date)).check(ViewAssertions.matches(withText(dummyShow[0].releaseDate)))
+		onView(withId(R.id.tv_detail_description)).check(ViewAssertions.matches(isDisplayed()))
+		onView(withId(R.id.tv_detail_description)).check(ViewAssertions.matches(withText(dummyShow[0].overview)))
+		onView(withId(R.id.img_poster)).check(ViewAssertions.matches(isDisplayed()))
+		onView(withId(R.id.tv_detail_language)).check(ViewAssertions.matches(isDisplayed()))
+		onView(withId(R.id.tv_detail_language)).check(ViewAssertions.matches(withText(dummyShow[0].language)))
 	}
 }
