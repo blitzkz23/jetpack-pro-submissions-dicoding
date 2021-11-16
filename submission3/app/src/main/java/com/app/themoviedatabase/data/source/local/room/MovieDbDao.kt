@@ -38,10 +38,10 @@ interface MovieDbDao {
 	fun getFavouritedTvShows(): LiveData<List<TvShowEntity>>
 
 	@Query("SELECT * FROM tvshowentities WHERE tvShowId = :tvShowId")
-	fun getTvShowsById(tvShowId: String): LiveData<TvShowEntity>
+	fun getTvShowById(tvShowId: String): LiveData<TvShowEntity>
 
 	@Insert(onConflict = OnConflictStrategy.REPLACE)
-	fun insertTvShows(tvShows: List<TvShowEntity>)
+	fun insertTvShow(tvShows: List<TvShowEntity>)
 
 	@Update
 	fun updateTvShows(tvShows: TvShowEntity)
