@@ -4,6 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.app.themoviedatabase.data.MovieDbRepository
+import com.app.themoviedatabase.data.source.local.entity.MovieEntity
 import com.app.themoviedatabase.data.source.local.entity.TvShowEntity
 import com.app.themoviedatabase.utils.DataDummy
 import org.junit.Assert.*
@@ -14,6 +15,8 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.Mockito
+import org.mockito.Mockito.`when`
+import org.mockito.Mockito.verify
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
@@ -43,20 +46,8 @@ class DetailTvShowViewModelTest {
 		val tvShow = MutableLiveData<TvShowEntity>()
 		tvShow.value = dummyTvShow
 
-		Mockito.`when`(movieDbRepository.getPopularTvShowById(tvShowId)).thenReturn(tvShow)
-		val tvShowEntity = viewModel.getTvShow().value as TvShowEntity
-		Mockito.verify(movieDbRepository).getPopularTvShowById(tvShowId)
-
-		assertNotNull(tvShowEntity)
-		assertEquals(dummyTvShow.tvShowId, tvShowEntity.tvShowId)
-		assertEquals(dummyTvShow.title, tvShowEntity.title)
-		assertEquals(dummyTvShow.releaseDate, tvShowEntity.releaseDate)
-		assertEquals(dummyTvShow.score, tvShowEntity.score, 0.0001)
-		assertEquals(dummyTvShow.language, tvShowEntity.language)
-		assertEquals(dummyTvShow.popularity, tvShowEntity.popularity, 0.0001)
-		assertEquals(dummyTvShow.overview, tvShowEntity.overview)
-
-		viewModel.getTvShow().observeForever(observer)
-		Mockito.verify(observer).onChanged(dummyTvShow)
+		`when`(movieDbRepository.getTvShowById(tvShowId)).thenReturn(tvShow)
+		viewModel.tvShowDetail.observeForever(observer)
+		verify(observer).onChanged(tvShow.value)
 	}
 }

@@ -3,9 +3,10 @@ package com.app.themoviedatabase.ui.tvshow
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import androidx.paging.PagedList
 import com.app.themoviedatabase.data.MovieDbRepository
 import com.app.themoviedatabase.data.source.local.entity.TvShowEntity
-import com.app.themoviedatabase.utils.DataDummy
+import com.dicoding.academies.vo.Resource
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
@@ -29,7 +30,10 @@ class TvShowViewModelTest {
 	private lateinit var movieDbRepository: MovieDbRepository
 
 	@Mock
-	private lateinit var observer: Observer<List<TvShowEntity>>
+	private lateinit var observer: Observer<Resource<PagedList<TvShowEntity>>>
+
+	@Mock
+	private lateinit var pagedList: PagedList<TvShowEntity>
 
 
 	@Before
@@ -39,17 +43,18 @@ class TvShowViewModelTest {
 
 	@Test
 	fun getTvShows() {
-		val dummyTvShow = DataDummy.generateDummyTvShows()
-		val tvShow = MutableLiveData<List<TvShowEntity>>()
-		tvShow.value = dummyTvShow
+		val dummyTvShows = Resource.success(pagedList)
+		`when`(dummyTvShows.data?.size).thenReturn(5)
+		val tvShows = MutableLiveData<Resource<PagedList<TvShowEntity>>>()
+		tvShows.value = dummyTvShows
 
-		`when`(movieDbRepository.getAllPopularTvShows()).thenReturn(tvShow)
-		val tvShowEntities = viewModel.getTvShows().value
+		`when`(movieDbRepository.getAllPopularTvShows()).thenReturn(tvShows)
+		val tvShowsEntities = viewModel.getTvShows().value?.data
 		Mockito.verify(movieDbRepository).getAllPopularTvShows()
-		assertNotNull(tvShowEntities)
-		assertEquals(5, tvShowEntities?.size)
+		assertNotNull(tvShowsEntities)
+		assertEquals(5, tvShowsEntities?.size)
 
 		viewModel.getTvShows().observeForever(observer)
-		Mockito.verify(observer).onChanged(dummyTvShow)
+		Mockito.verify(observer).onChanged(dummyTvShows)
 	}
 }

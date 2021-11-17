@@ -44,20 +44,8 @@ class DetailMovieViewModelTest {
 		val movie = MutableLiveData<MovieEntity>()
 		movie.value = dummyMovies
 
-		`when`(movieDbRepository.getPopularMovieById(movieId)).thenReturn(movie)
-		val movieEntity = viewModel.getMovieById().value as MovieEntity
-		verify(movieDbRepository).getPopularMovieById(movieId)
-
-		assertNotNull(movieEntity)
-		assertEquals(dummyMovies.movieId, movieEntity.movieId)
-		assertEquals(dummyMovies.title, movieEntity.title)
-		assertEquals(dummyMovies.releaseDate, movieEntity.releaseDate)
-		assertEquals(dummyMovies.score, movieEntity.score, 0.0001)
-		assertEquals(dummyMovies.language, movieEntity.language)
-		assertEquals(dummyMovies.popularity, movieEntity.popularity, 0.0001)
-		assertEquals(dummyMovies.overview, movieEntity.overview)
-
-		viewModel.getMovieById().observeForever(observer)
-		verify(observer).onChanged(dummyMovies)
+		`when`(movieDbRepository.getMovieById(movieId)).thenReturn(movie)
+		viewModel.movieDetail.observeForever(observer)
+		verify(observer).onChanged(movie.value)
 	}
 }

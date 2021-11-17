@@ -31,9 +31,6 @@ data class ResultsItem(
 	@field:SerializedName("original_title")
 	val originalTitle: String,
 
-	@field:SerializedName("video")
-	val video: Boolean,
-
 	@field:SerializedName("title", alternate=["name"])
 	val title: String,
 
@@ -57,9 +54,6 @@ data class ResultsItem(
 
 	@field:SerializedName("id")
 	val id: Int,
-
-	@field:SerializedName("adult")
-	val adult: Boolean,
 
 	@field:SerializedName("vote_count")
 	val voteCount: Int
