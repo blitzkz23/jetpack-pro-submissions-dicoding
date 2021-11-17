@@ -10,7 +10,7 @@ interface MovieDbDataSource {
 
 	fun getAllPopularMovies(): LiveData<Resource<PagedList<MovieEntity>>>
 
-	fun getFavouritedMovies(): LiveData<List<MovieEntity>>
+	fun getFavouritedMovies(): LiveData<PagedList<MovieEntity>>
 
 	fun getMovieById(movieId: Int): LiveData<MovieEntity>
 
@@ -18,7 +18,7 @@ interface MovieDbDataSource {
 
 	fun getAllPopularTvShows(): LiveData<Resource<PagedList<TvShowEntity>>>
 
-	fun getFavouritedTvShows(): LiveData<List<TvShowEntity>>
+	fun getFavouritedTvShows(): LiveData<PagedList<TvShowEntity>>
 
 	fun getTvShowById(tvShowId: Int): LiveData<TvShowEntity>
 

@@ -33,8 +33,7 @@ class FavoriteMovieFragment : Fragment() {
 		val favoriteMovieAdapter = FavoriteMovieAdapter()
 		viewModel.getFavoriteMovies().observe(viewLifecycleOwner, { movies ->
 			if (movies != null) {
-				favoriteMovieAdapter.setMovies(movies)
-				favoriteMovieAdapter.notifyDataSetChanged()
+				favoriteMovieAdapter.submitList(movies)
 			}
 		})
 

@@ -17,7 +17,7 @@ interface MovieDbDao {
 	fun getMovies(): DataSource.Factory<Int, MovieEntity>
 
 	@Query("SELECT * FROM movieentities WHERE favourited = 1")
-	fun getFavouritedMovie(): LiveData<List<MovieEntity>>
+	fun getFavouritedMovie(): DataSource.Factory<Int, MovieEntity>
 
 	@Query("SELECT * FROM movieentities WHERE movieId = :movieId")
 	fun getMovieById(movieId: Int): LiveData<MovieEntity>
@@ -35,7 +35,7 @@ interface MovieDbDao {
 	fun getTvShows(): DataSource.Factory<Int, TvShowEntity>
 
 	@Query("SELECT * FROM tvshowentities WHERE favourited = 1")
-	fun getFavouritedTvShows(): LiveData<List<TvShowEntity>>
+	fun getFavouritedTvShows(): DataSource.Factory<Int, TvShowEntity>
 
 	@Query("SELECT * FROM tvshowentities WHERE tvShowId = :tvShowId")
 	fun getTvShowById(tvShowId: Int): LiveData<TvShowEntity>

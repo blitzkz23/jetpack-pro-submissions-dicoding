@@ -1,23 +1,29 @@
 package com.app.themoviedatabase.ui.favorites.favoritemovie
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagedListAdapter
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.app.themoviedatabase.BuildConfig
 import com.app.themoviedatabase.R
 import com.app.themoviedatabase.data.source.local.entity.MovieEntity
 import com.app.themoviedatabase.databinding.ItemsFavoritesBinding
+import com.app.themoviedatabase.ui.detail.movie.DetailMovieActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
-class FavoriteMovieAdapter : RecyclerView.Adapter<FavoriteMovieAdapter.ViewHolder>() {
-
-	private val listFavorites = ArrayList<MovieEntity>()
-
-	fun setMovies(movies: List<MovieEntity>?) {
-		if (movies == null) return
-		this.listFavorites.clear()
-		this.listFavorites.addAll(movies)
+class FavoriteMovieAdapter : PagedListAdapter<MovieEntity, FavoriteMovieAdapter.ViewHolder>(DIFF_CALLBACK) {
+	companion object {
+		private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<MovieEntity>() {
+			override fun areItemsTheSame(oldItem: MovieEntity, newItem: MovieEntity): Boolean {
+				return oldItem.movieId == newItem.movieId
+			}
+			override fun areContentsTheSame(oldItem: MovieEntity, newItem: MovieEntity): Boolean {
+				return oldItem == newItem
+			}
+		}
 	}
 
 	inner class ViewHolder(private val binding: ItemsFavoritesBinding) :
@@ -30,6 +36,11 @@ class FavoriteMovieAdapter : RecyclerView.Adapter<FavoriteMovieAdapter.ViewHolde
 					.error(R.drawable.ic_error)
 					.into(imgPoster)
 				tvMovieTitle.text = movies.title
+				itemView.setOnClickListener {
+					val intent = Intent(itemView.context, DetailMovieActivity::class.java)
+					intent.putExtra(DetailMovieActivity.EXTRA_MOVIE, movies.movieId)
+					itemView.context.startActivity(intent)
+				}
 			}
 		}
 	}
@@ -40,9 +51,10 @@ class FavoriteMovieAdapter : RecyclerView.Adapter<FavoriteMovieAdapter.ViewHolde
 	}
 
 	override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-		val movies = listFavorites[position]
-		holder.bind(movies)
+		val movies = getItem(position)
+		if (movies != null) {
+			holder.bind(movies)
+		}
 	}
 
-	override fun getItemCount(): Int = listFavorites.size
 }

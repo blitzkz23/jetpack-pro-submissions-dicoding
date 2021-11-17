@@ -33,8 +33,7 @@ class FavoriteTvShowFragment : Fragment() {
 		val favoriteTvShowAdapter = FavoriteTvShowAdapter()
 		viewModel.getFavouritedTvShows().observe(viewLifecycleOwner, { tvShows ->
 			if (tvShows != null) {
-				favoriteTvShowAdapter.setTvShows(tvShows)
-				favoriteTvShowAdapter.notifyDataSetChanged()
+				favoriteTvShowAdapter.submitList(tvShows)
 			}
 		})
 

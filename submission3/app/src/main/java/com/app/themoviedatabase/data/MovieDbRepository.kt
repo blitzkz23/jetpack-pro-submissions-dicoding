@@ -58,8 +58,14 @@ class MovieDbRepository private constructor(
 		}.asLiveData()
 	}
 
-	override fun getFavouritedMovies(): LiveData<List<MovieEntity>> =
-		localDataSource.getFavouritedMovies()
+	override fun getFavouritedMovies(): LiveData<PagedList<MovieEntity>> {
+		val config = PagedList.Config.Builder()
+			.setEnablePlaceholders(false)
+			.setInitialLoadSizeHint(4)
+			.setPageSize(4)
+			.build()
+		return LivePagedListBuilder(localDataSource.getFavouritedMovies(), config).build()
+	}
 
 	override fun getMovieById(movieId: Int): LiveData<MovieEntity> =
 		localDataSource.getMovieById(movieId)
@@ -106,8 +112,14 @@ class MovieDbRepository private constructor(
 		}.asLiveData()
 	}
 
-	override fun getFavouritedTvShows(): LiveData<List<TvShowEntity>> =
-		localDataSource.getFavouritedTvShows()
+	override fun getFavouritedTvShows(): LiveData<PagedList<TvShowEntity>> {
+		val config = PagedList.Config.Builder()
+			.setEnablePlaceholders(false)
+			.setInitialLoadSizeHint(4)
+			.setPageSize(4)
+			.build()
+		return LivePagedListBuilder(localDataSource.getFavouritedTvShows(), config).build()
+	}
 
 	override fun getTvShowById(tvShowId: Int): LiveData<TvShowEntity> =
 		localDataSource.getTvShowById(tvShowId)

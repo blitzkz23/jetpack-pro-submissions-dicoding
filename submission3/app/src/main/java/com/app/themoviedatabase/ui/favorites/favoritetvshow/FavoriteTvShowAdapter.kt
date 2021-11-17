@@ -1,25 +1,30 @@
 package com.app.themoviedatabase.ui.favorites.favoritetvshow
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagedListAdapter
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.app.themoviedatabase.BuildConfig
 import com.app.themoviedatabase.R
-import com.app.themoviedatabase.data.source.local.entity.MovieEntity
 import com.app.themoviedatabase.data.source.local.entity.TvShowEntity
 import com.app.themoviedatabase.databinding.ItemsFavoritesBinding
-import com.app.themoviedatabase.ui.favorites.favoritemovie.FavoriteMovieAdapter
+import com.app.themoviedatabase.ui.detail.tvshow.DetailTvShowActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
-class FavoriteTvShowAdapter : RecyclerView.Adapter<FavoriteTvShowAdapter.ViewHolder>() {
+class FavoriteTvShowAdapter : PagedListAdapter<TvShowEntity, FavoriteTvShowAdapter.ViewHolder>(DIFF_CALLBACK) {
 
-	private val listFavorites = ArrayList<TvShowEntity>()
-
-	fun setTvShows(tvShows: List<TvShowEntity>?) {
-		if (tvShows == null) return
-		this.listFavorites.clear()
-		this.listFavorites.addAll(tvShows)
+	companion object {
+		private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<TvShowEntity>() {
+			override fun areItemsTheSame(oldItem: TvShowEntity, newItem: TvShowEntity): Boolean {
+				return oldItem.tvShowId == newItem.tvShowId
+			}
+			override fun areContentsTheSame(oldItem: TvShowEntity, newItem: TvShowEntity): Boolean {
+				return oldItem == newItem
+			}
+		}
 	}
 
 	inner class ViewHolder(private val binding: ItemsFavoritesBinding) :
@@ -32,6 +37,11 @@ class FavoriteTvShowAdapter : RecyclerView.Adapter<FavoriteTvShowAdapter.ViewHol
 					.error(R.drawable.ic_error)
 					.into(imgPoster)
 				tvMovieTitle.text = tvShows.title
+				itemView.setOnClickListener {
+					val intent = Intent(itemView.context, DetailTvShowActivity::class.java)
+					intent.putExtra(DetailTvShowActivity.EXTRA_TVSHOW, tvShows.tvShowId)
+					itemView.context.startActivity(intent)
+				}
 			}
 		}
 	}
@@ -42,9 +52,10 @@ class FavoriteTvShowAdapter : RecyclerView.Adapter<FavoriteTvShowAdapter.ViewHol
 	}
 
 	override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-		val tvShows = listFavorites[position]
-		holder.bind(tvShows)
-	}
+		val tvShows = getItem(position)
+		if (tvShows != null) {
+			holder.bind(tvShows)
+		}
 
-	override fun getItemCount(): Int = listFavorites.size
+	}
 }
