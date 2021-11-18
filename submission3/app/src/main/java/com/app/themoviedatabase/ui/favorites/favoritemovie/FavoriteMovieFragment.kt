@@ -37,7 +37,7 @@ class FavoriteMovieFragment : Fragment() {
 			}
 		})
 
-		fragmentFavoriteMovieBinding?.rvMovie?.apply {
+		fragmentFavoriteMovieBinding?.rvFav?.apply {
 			layoutManager = GridLayoutManager(context, 2)
 			setHasFixedSize(true)
 			adapter = favoriteMovieAdapter

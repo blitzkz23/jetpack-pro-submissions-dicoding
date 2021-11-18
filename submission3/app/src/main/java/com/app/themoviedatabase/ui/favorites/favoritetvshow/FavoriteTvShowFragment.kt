@@ -37,7 +37,7 @@ class FavoriteTvShowFragment : Fragment() {
 			}
 		})
 
-		fragmentFavoriteTvShowBinding?.rvMovie?.apply {
+		fragmentFavoriteTvShowBinding?.rvFav?.apply {
 			layoutManager = GridLayoutManager(context, 2)
 			setHasFixedSize(true)
 			adapter = favoriteTvShowAdapter
