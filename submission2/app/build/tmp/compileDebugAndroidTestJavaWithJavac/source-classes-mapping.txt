@@ -1,2 +1,0 @@
-com/app/themoviedatabase/test/BuildConfig.java
- com.app.themoviedatabase.test.BuildConfig
