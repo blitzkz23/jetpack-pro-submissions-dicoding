@@ -1,0 +1,43 @@
+com/app/themoviedatabase/data/source/local/room/MovieDbDatabase_Impl.java
+ com.app.themoviedatabase.data.source.local.room.MovieDbDatabase_Impl
+ com.app.themoviedatabase.data.source.local.room.MovieDbDatabase_Impl$1
+com/app/themoviedatabase/BuildConfig.java
+ com.app.themoviedatabase.BuildConfig
+com/app/themoviedatabase/data/source/local/room/MovieDbDao_Impl.java
+ com.app.themoviedatabase.data.source.local.room.MovieDbDao_Impl
+ com.app.themoviedatabase.data.source.local.room.MovieDbDao_Impl$1
+ com.app.themoviedatabase.data.source.local.room.MovieDbDao_Impl$10
+ com.app.themoviedatabase.data.source.local.room.MovieDbDao_Impl$2
+ com.app.themoviedatabase.data.source.local.room.MovieDbDao_Impl$3
+ com.app.themoviedatabase.data.source.local.room.MovieDbDao_Impl$4
+ com.app.themoviedatabase.data.source.local.room.MovieDbDao_Impl$5
+ com.app.themoviedatabase.data.source.local.room.MovieDbDao_Impl$5$1
+ com.app.themoviedatabase.data.source.local.room.MovieDbDao_Impl$6
+ com.app.themoviedatabase.data.source.local.room.MovieDbDao_Impl$6$1
+ com.app.themoviedatabase.data.source.local.room.MovieDbDao_Impl$7
+ com.app.themoviedatabase.data.source.local.room.MovieDbDao_Impl$8
+ com.app.themoviedatabase.data.source.local.room.MovieDbDao_Impl$8$1
+ com.app.themoviedatabase.data.source.local.room.MovieDbDao_Impl$9
+ com.app.themoviedatabase.data.source.local.room.MovieDbDao_Impl$9$1
+com/app/themoviedatabase/databinding/ActivitySplashBinding.java
+ com.app.themoviedatabase.databinding.ActivitySplashBinding
+com/app/themoviedatabase/databinding/ItemsFavoritesBinding.java
+ com.app.themoviedatabase.databinding.ItemsFavoritesBinding
+com/app/themoviedatabase/databinding/FragmentFavoriteTvShowBinding.java
+ com.app.themoviedatabase.databinding.FragmentFavoriteTvShowBinding
+com/app/themoviedatabase/databinding/ContentDetailBinding.java
+ com.app.themoviedatabase.databinding.ContentDetailBinding
+com/app/themoviedatabase/databinding/ActivityHomeBinding.java
+ com.app.themoviedatabase.databinding.ActivityHomeBinding
+com/app/themoviedatabase/databinding/FragmentMovieBinding.java
+ com.app.themoviedatabase.databinding.FragmentMovieBinding
+com/app/themoviedatabase/databinding/FragmentTvShowBinding.java
+ com.app.themoviedatabase.databinding.FragmentTvShowBinding
+com/app/themoviedatabase/databinding/ActivityFavoritesBinding.java
+ com.app.themoviedatabase.databinding.ActivityFavoritesBinding
+com/app/themoviedatabase/databinding/ItemsMovieBinding.java
+ com.app.themoviedatabase.databinding.ItemsMovieBinding
+com/app/themoviedatabase/databinding/FragmentFavoriteMovieBinding.java
+ com.app.themoviedatabase.databinding.FragmentFavoriteMovieBinding
+com/app/themoviedatabase/databinding/ActivityDetailBinding.java
+ com.app.themoviedatabase.databinding.ActivityDetailBinding

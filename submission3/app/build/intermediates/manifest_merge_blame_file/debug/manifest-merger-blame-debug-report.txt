@@ -1,0 +1,127 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.app.themoviedatabase"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="22"
+8-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:5:22-64
+12
+13    <application
+13-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:7:5-57:19
+14        android:allowBackup="true"
+14-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:8:9-35
+15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+15-->[androidx.core:core:1.7.0] C:\Users\Noparuu\.gradle\caches\transforms-3\22fc58c1aba25a38624b19fcaec4a163\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+16        android:debuggable="true"
+17        android:fullBackupContent="true"
+17-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:9:9-41
+18        android:icon="@mipmap/ic_tmdb"
+18-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:10:9-39
+19        android:label="@string/app_name"
+19-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:11:9-41
+20        android:roundIcon="@mipmap/ic_tmdb_round"
+20-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:12:9-50
+21        android:supportsRtl="true"
+21-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:13:9-35
+22        android:testOnly="true"
+23        android:theme="@style/Theme.TheMovieDatabase" >
+23-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:14:9-54
+24        <activity
+24-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:15:9-21:20
+25            android:name="com.app.themoviedatabase.ui.favorites.FavoritesActivity"
+25-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:16:13-59
+26            android:exported="false" >
+26-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:17:13-37
+27            <meta-data
+27-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:18:13-20:57
+28                android:name="android.support.PARENT_ACTIVITY"
+28-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:19:17-63
+29                android:value=".ui.home.HomeActivity" />
+29-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:20:17-54
+30        </activity>
+31        <activity
+31-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:22:9-31:20
+32            android:name="com.app.themoviedatabase.ui.home.SplashActivity"
+32-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:23:13-51
+33            android:exported="true"
+33-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:24:13-36
+34            android:theme="@style/Theme.TheMovieDatabase.NoActionBar" >
+34-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:25:13-70
+35            <intent-filter>
+35-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:26:13-30:29
+36                <action android:name="android.intent.action.MAIN" />
+36-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:27:17-69
+36-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:27:25-66
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:29:17-77
+38-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:29:27-74
+39            </intent-filter>
+40        </activity>
+41        <activity
+41-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:32:9-39:20
+42            android:name="com.app.themoviedatabase.ui.detail.tvshow.DetailTvShowActivity"
+42-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:33:13-66
+43            android:exported="false"
+43-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:34:13-37
+44            android:theme="@style/Theme.TheMovieDatabase.NoActionBar" >
+44-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:35:13-70
+45            <meta-data
+45-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:18:13-20:57
+46                android:name="android.support.PARENT_ACTIVITY"
+46-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:19:17-63
+47                android:value=".ui.home.HomeActivity" />
+47-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:20:17-54
+48        </activity>
+49        <activity
+49-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:40:9-48:20
+50            android:name="com.app.themoviedatabase.ui.detail.movie.DetailMovieActivity"
+50-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:41:13-64
+51            android:exported="false"
+51-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:42:13-37
+52            android:label="@string/title_activity_detail"
+52-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:43:13-58
+53            android:theme="@style/Theme.TheMovieDatabase.NoActionBar" >
+53-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:44:13-70
+54            <meta-data
+54-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:18:13-20:57
+55                android:name="android.support.PARENT_ACTIVITY"
+55-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:19:17-63
+56                android:value=".ui.home.HomeActivity" />
+56-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:20:17-54
+57        </activity>
+58        <activity
+58-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:49:9-52:73
+59            android:name="com.app.themoviedatabase.ui.home.HomeActivity"
+59-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:50:13-49
+60            android:exported="true"
+60-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:51:13-36
+61            android:theme="@style/Theme.TheMovieDatabase.NoActionBar" />
+61-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:52:13-70
+62
+63        <meta-data
+63-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:54:9-56:57
+64            android:name="preloaded_fonts"
+64-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:55:13-43
+65            android:resource="@array/preloaded_fonts" />
+65-->C:\Users\Noparuu\Desktop\Dicoding\belajar-android-jetpack-pro\jetpack-pro-submissions\submission3\app\src\main\AndroidManifest.xml:56:13-54
+66
+67        <service
+67-->[androidx.room:room-runtime:2.2.5] C:\Users\Noparuu\.gradle\caches\transforms-3\a5a406dd3d7266b11df80c9b3d4e1ff9\transformed\room-runtime-2.2.5\AndroidManifest.xml:25:9-28:40
+68            android:name="androidx.room.MultiInstanceInvalidationService"
+68-->[androidx.room:room-runtime:2.2.5] C:\Users\Noparuu\.gradle\caches\transforms-3\a5a406dd3d7266b11df80c9b3d4e1ff9\transformed\room-runtime-2.2.5\AndroidManifest.xml:26:13-74
+69            android:directBootAware="true"
+69-->[androidx.room:room-runtime:2.2.5] C:\Users\Noparuu\.gradle\caches\transforms-3\a5a406dd3d7266b11df80c9b3d4e1ff9\transformed\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
+70            android:exported="false" />
+70-->[androidx.room:room-runtime:2.2.5] C:\Users\Noparuu\.gradle\caches\transforms-3\a5a406dd3d7266b11df80c9b3d4e1ff9\transformed\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
+71    </application>
+72
+73</manifest>

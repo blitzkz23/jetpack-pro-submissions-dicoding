@@ -1,0 +1,16 @@
+com/app/themoviedatabase/databinding/ActivitySplashBinding.java
+ com.app.themoviedatabase.databinding.ActivitySplashBinding
+com/app/themoviedatabase/databinding/ContentDetailBinding.java
+ com.app.themoviedatabase.databinding.ContentDetailBinding
+com/app/themoviedatabase/databinding/ActivityHomeBinding.java
+ com.app.themoviedatabase.databinding.ActivityHomeBinding
+com/app/themoviedatabase/databinding/FragmentMovieBinding.java
+ com.app.themoviedatabase.databinding.FragmentMovieBinding
+com/app/themoviedatabase/databinding/FragmentTvShowBinding.java
+ com.app.themoviedatabase.databinding.FragmentTvShowBinding
+com/app/themoviedatabase/BuildConfig.java
+ com.app.themoviedatabase.BuildConfig
+com/app/themoviedatabase/databinding/ItemsMovieBinding.java
+ com.app.themoviedatabase.databinding.ItemsMovieBinding
+com/app/themoviedatabase/databinding/ActivityDetailBinding.java
+ com.app.themoviedatabase.databinding.ActivityDetailBinding

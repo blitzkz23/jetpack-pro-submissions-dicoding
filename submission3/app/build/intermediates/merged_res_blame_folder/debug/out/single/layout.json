@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_favorites.xml",
+        "source": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\src\\main\\res\\layout\\activity_favorites.xml"
+    },
+    {
+        "merged": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_tv_show.xml",
+        "source": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\src\\main\\res\\layout\\fragment_tv_show.xml"
+    },
+    {
+        "merged": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_splash.xml",
+        "source": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\src\\main\\res\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_detail.xml",
+        "source": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\src\\main\\res\\layout\\activity_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_favorite_movie.xml",
+        "source": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\src\\main\\res\\layout\\fragment_favorite_movie.xml"
+    },
+    {
+        "merged": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\items_movie.xml",
+        "source": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\src\\main\\res\\layout\\items_movie.xml"
+    },
+    {
+        "merged": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_movie.xml",
+        "source": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\src\\main\\res\\layout\\fragment_movie.xml"
+    },
+    {
+        "merged": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\content_detail.xml",
+        "source": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\src\\main\\res\\layout\\content_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_home.xml",
+        "source": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\src\\main\\res\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_favorites.xml",
+        "source": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\src\\main\\res\\layout\\item_favorites.xml"
+    },
+    {
+        "merged": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_favorite_tv_show.xml",
+        "source": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\src\\main\\res\\layout\\fragment_favorite_tv_show.xml"
+    },
+    {
+        "merged": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\items_favorites.xml",
+        "source": "C:\\Users\\Noparuu\\Desktop\\Dicoding\\belajar-android-jetpack-pro\\jetpack-pro-submissions\\submission3\\app\\src\\main\\res\\layout\\items_favorites.xml"
+    }
+]
