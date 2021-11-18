@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+    <TextView
+        android:id="@+id/tv_detail_title"
+        style="@style/TextContent.TitleDetail"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:ellipsize="end"
+        android:gravity="start"
+        android:maxLines="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/title" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/TextContent.SubTitle"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="19dp"
+        android:gravity="start"
+        android:text="@string/release_date"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_detail_rate"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/TextContent.SubTitle"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:gravity="start"
+        android:text="@string/language"
+        app:layout_constraintEnd_toStartOf="@+id/textView4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_detail_title" />
+
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/TextContent.SubTitle"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="start"
+        android:text="@string/popularity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_detail_title" />
+
+    <TextView
+        android:id="@+id/tv_detail_date"
+        style="@style/TextContent"
+        android:gravity="start"
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:ignore="TextContrastCheck"
+        tools:text="@string/release_date" />
+
+    <TextView
+        android:id="@+id/tv_detail_popularity"
+        style="@style/TextContent"
+        android:gravity="start"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        tools:text="@string/popularity" />
+
+    <TextView
+        android:id="@+id/tv_detail_language"
+        style="@style/TextContent"
+        android:gravity="start"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:text="@string/language" />
+
+    <TextView
+        android:id="@+id/tv_detail_rate"
+        style="@style/TextContent.SubTitle"
+        android:layout_alignParentEnd="true"
+        android:drawablePadding="4dp"
+        app:drawableStartCompat="@drawable/star"
+        app:layout_constraintStart_toStartOf="@+id/tv_detail_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_detail_title"
+        tools:text="@string/rating_placeholder" />
+
+    <TextView
+        android:id="@+id/tv_detail_overview"
+        style="@style/TextContent.SubTitle"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/overview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_detail_date" />
+
+    <TextView
+        android:id="@+id/tv_detail_description"
+        style="@style/TextContent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_detail_overview"
+        app:layout_constraintTop_toBottomOf="@+id/tv_detail_overview"
+        tools:text="@string/description_placeholder" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
